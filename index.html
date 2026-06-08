@@ -52,14 +52,12 @@
          ==================================================================== -->
 
     <!-- CINTILLO SUPERIOR OFICIAL -->
-    <header class="header-institucional">
-        <div class="container">
-            
-                
-
-            
+<header class="bg-[url('cintillo.png')] bg-cover bg-center border-gov-border min-h-[80px] w-full flex items-center">
+    
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        
         </div>
-    </header>
+</header>
 
     <!-- BARRA SUPERIOR DE NAVEGACIÓN -->
     <nav class="nav-principal">
@@ -116,114 +114,108 @@
                     </ul>
                 </li>
 
-                <!-- Item: Direcciones (Plan de las 7 Transformaciones y Subdirecciones) -->
                 <li class="nav-item">
-                    <button class="nav-btn">
-                        <i class="fa-solid fa-sitemap text-white/80"></i>
-                        Secretarías 7 Transformaciones
-                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
-                    </button>
-                    
-                    <ul class="submenu" style="width: 19rem;">
-                        <!-- T1: Modernización Económica -->
-                        <li class="nested-submenu-container border-b border-gov-border">
-                            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
-                                <span class="font-medium flex items-center gap-2"><span class="bg-red-100 text-gov-wine rounded-full w-4 h-4 flex items-center justify-center text-[8px] font-bold">1</span> Transformación Económica</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
-                            </div>
-                            <ul class="nested-submenu">
-                                <li class="bg-gov-light px-4 py-1.5 text-[9px] font-bold text-gov-slate border-b border-gov-border uppercase">Direcciones T1</li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Agroproductivo, Comercial y Económico', 'T1: Económica', 'Encargada de potenciar la siembra y el apoyo técnico y formativo a pequeños y medianos productores del municipio.')" class="submenu-link text-[11px]">Dirección de Desarrollo Agroproductivo</a></li>
-                                <li><a href="#" onclick="openDireccion('Brigada de Desarrollo Protegido', 'T1: Económica', 'Regula e impulsa las actividades comerciales, de emprendimiento y el registro económico local en Duaca.')" class="submenu-link text-[11px]">Brigada de Desarrollo Protegido</a></li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Turismo', 'T1: Económica', 'Coordina con las torrefactoras locales la optimización, calidad y exportación del café de Crespo.')" class="submenu-link text-[11px]">Dirección de Turismo</a></li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Emprendimiento', 'T1: Económica', 'Coordina con las torrefactoras locales la optimización, calidad y exportación del café de Crespo.')" class="submenu-link text-[11px]">Dirección de Emprendimiento</a></li>
-                                <li><a href="#" onclick="openDireccion('Órgano Municipal de Economía Productiva', 'T1: Económica', 'Coordina con las torrefactoras locales la optimización, calidad y exportación del café de Crespo.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Economía Productiva</a></li>
-                            </ul>
-                        </li>
+       <button class="nav-btn">
+        <i class="fa-solid fa-sitemap text-white/80"></i>
+        Secretarías 7 Transformaciones
+        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+        </button>
+    
+    <ul class="submenu" style="width: 22rem;">
+        <ul>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Económica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Agroproductivo, Comercial y Económico', 'T1: Económica', 'Potenciación de la siembra y apoyo técnico.')" class="submenu-link text-[11px]">Dirección de Desarrollo Agroproductivo, Comercial y Económico</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Turismo', 'T1: Económica', 'Promoción del turismo local.')" class="submenu-link text-[11px]">Dirección de Turismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Emprendimiento', 'T1: Económica', 'Apoyo a nuevos emprendedores.')" class="submenu-link text-[11px]">Dirección de Emprendimiento</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Economía Productiva', 'T1: Económica', 'Coordinación económica productiva.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Economía Productiva</a></li>
+            </ul>
+        </li>
 
-                        <!-- T2: Transformación de los Servicios Públicos e Infraestructura-->
-                        <li class="nested-submenu-container border-b border-gov-border">
-                            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
-                                <span class="font-medium flex items-center gap-2"><span class="bg-red-100 text-gov-wine rounded-full w-4 h-4 flex items-center justify-center text-[8px] font-bold">2</span> Servicios e Infraestructura</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
-                            </div>
-                            <ul class="nested-submenu">
-                                <li class="bg-gov-light px-4 py-1.5 text-[9px] font-bold text-gov-slate border-b border-gov-border uppercase">Direcciones T2</li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Servicios Públicos, Patrimonio e Identidad', 'T2: Independencia', 'Fomenta el arraigo histórico, cuidado de escuelas locales y protección del casco colonial de Duaca.')" class="submenu-link text-[11px]">Servicios Públicos y Patrimonio</a></li>
-                                <li><a href="#" onclick="openDireccion('Oficina de Innovación, Ciencia y Tecnología', 'T2: Independencia', 'Promueve el acceso a la tecnología, infocentros y proyectos de modernización gubernamental digital.')" class="submenu-link text-[11px]">Oficina de Ciencia y Tecnología</a></li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Cultura y Tradiciones Populares', 'T2: Independencia', 'Preserva el folclor municipal, las festividades de San Juan Bautista y actividades artísticas.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Cultura "La Perla"</a></li>
-                            </ul>
-                        </li>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Servicios e Infraestructura</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Servicios Públicos', 'T2: Servicios', 'Gestión de servicios básicos.')" class="submenu-link text-[11px]">Dirección de Servicios Públicos</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Infraestructura', 'T2: Servicios', 'Desarrollo de obras y mantenimiento.')" class="submenu-link text-[11px]">Dirección de Infraestructura</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Catastro y Urbanismo', 'T2: Servicios', 'Ordenamiento territorial y catastro.')" class="submenu-link text-[11px]">Dirección de Catastro y Urbanismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Vialidad y Transporte Público', 'T2: Servicios', 'Gestión vial y transporte.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Vialidad y Transporte Público</a></li>
+            </ul>
+        </li>
 
-                        <!-- T3: Paz, Seguridad y Territorio -->
-                        <li class="nested-submenu-container border-b border-gov-border">
-                            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
-                                <span class="font-medium flex items-center gap-2"><span class="bg-red-100 text-gov-wine rounded-full w-4 h-4 flex items-center justify-center text-[8px] font-bold">3</span> Paz, Seguridad y Territorio</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
-                            </div>
-                            <ul class="nested-submenu">
-                                <li class="bg-gov-light px-4 py-1.5 text-[9px] font-bold text-gov-slate border-b border-gov-border uppercase">Direcciones T3</li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Ciudadana y Convivencia', 'T3: Paz y Seguridad', 'Coordina los planes preventivos, la convivencia comunal y el enlace con las fuerzas de seguridad.')" class="submenu-link text-[11px]">Dirección de Seguridad Ciudadana</a></li>
-                                <li><a href="#" onclick="openDireccion('Oficina de Gestión de Riesgos y Protección Civil', 'T3: Paz y Seguridad', 'Atención de emergencias y monitoreo constante de zonas vulnerables de la geografía crespense.')" class="submenu-link text-[11px]">Gestión de Riesgos y PC</a></li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Catastro Municipal', 'T3: Paz y Seguridad', 'Ente rector de la delimitación territorial, zonificación y registro catastral de los inmuebles.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Catastro Municipal</a></li>
-                            </ul>
-                        </li>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Seguridad y Prevención</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Interna', 'T3: Seguridad', 'Seguridad interna municipal.')" class="submenu-link text-[11px]">Dirección de Seguridad Interna</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Ciudadana', 'T3: Seguridad', 'Atención y convivencia.')" class="submenu-link text-[11px]">Dirección de Seguridad Ciudadana</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Prevención del Delito', 'T3: Seguridad', 'Planes de prevención.')" class="submenu-link text-[11px]">Órgano de Prevención del Delito</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Seguridad', 'T3: Seguridad', 'Coordinación de seguridad.')" class="submenu-link text-[11px]">Órgano Municipal de Seguridad</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Dirección de Defensa Integral', 'T3: Seguridad', 'Defensa y despliegue.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano de Dirección de Defensa Integral</a></li>
+            </ul>
+        </li>
 
-                        <!-- T4: Protección Social -->
-                        <li class="nested-submenu-container border-b border-gov-border">
-                            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
-                                <span class="font-medium flex items-center gap-2"><span class="bg-red-100 text-gov-wine rounded-full w-4 h-4 flex items-center justify-center text-[8px] font-bold">4</span> Protección Social del Pueblo</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
-                            </div>
-                            <ul class="nested-submenu">
-                                <li class="bg-gov-light px-4 py-1.5 text-[9px] font-bold text-gov-slate border-b border-gov-border uppercase">Direcciones T4</li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Salud y Bienestar Social', 'T4: Social', 'Gestión de la red de atención primaria, entrega de medicinas y jornadas de salud rural.')" class="submenu-link text-[11px]">Dirección de Salud y Bienestar</a></li>
-                                <li><a href="#" onclick="openDireccion('Instituto Municipal de la Mujer y la Familia', 'T4: Social', 'Promueve el empoderamiento, asesoría legal y el resguardo integral de la familia en Crespo.')" class="submenu-link text-[11px]">Instituto Municipal de la Mujer</a></li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Vivienda y Hábitat Crespo', 'T4: Social', 'Monitoreo de desarrollos habitacionales e impulsos de mejoras para viviendas vulnerables.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Vivienda</a></li>
-                            </ul>
-                        </li>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Social</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Social', 'T4: Social', 'Programas de desarrollo social.')" class="submenu-link text-[11px]">Dirección de Desarrollo Social</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Cultura', 'T4: Social', 'Gestión cultural.')" class="submenu-link text-[11px]">Dirección de Cultura</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal del Buen Gobierno', 'T4: Social', 'Eficiencia administrativa.')" class="submenu-link text-[11px]">Órgano Municipal del Buen Gobierno</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Alimentación', 'T4: Social', 'Soberanía alimentaria.')" class="submenu-link text-[11px]">Órgano Municipal de Alimentación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Salud y el Bienestar', 'T4: Social', 'Salud preventiva.')" class="submenu-link text-[11px]">Órgano Municipal de Salud y el Bienestar</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Educación', 'T4: Social', 'Fortalecimiento educativo.')" class="submenu-link text-[11px]">Órgano Municipal de Educación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Misiones y Grandes Misiones', 'T4: Social', 'Gestión de misiones.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Misiones y Grandes Misiones</a></li>
+            </ul>
+        </li>
 
-                        <!-- T5: Democracia Directa -->
-                        <li class="nested-submenu-container border-b border-gov-border">
-                            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
-                                <span class="font-medium flex items-center gap-2"><span class="bg-red-100 text-gov-wine rounded-full w-4 h-4 flex items-center justify-center text-[8px] font-bold">5</span> Democracia Directa (Popular)</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
-                            </div>
-                            <ul class="nested-submenu">
-                                <li class="bg-gov-light px-4 py-1.5 text-[9px] font-bold text-gov-slate border-b border-gov-border uppercase">Direcciones T5</li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Comunas y Consejos Comunales', 'T5: Poder Popular', 'Articula los planes de desarrollo y el financiamiento de proyectos comunales y autogestionados.')" class="submenu-link text-[11px]">Comunas y Consejos Comunales</a></li>
-                                <li><a href="#" onclick="openDireccion('Oficina de Atención Ciudadana (OAC)', 'T5: Poder Popular', 'Enlace directo para trámites, quejas, reclamos y solicitudes directas enviadas por la ciudadanía.')" class="submenu-link text-[11px]">Oficina de Atención Ciudadana</a></li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Planificación y Presupuesto Participativo', 'T5: Poder Popular', 'Formulación del presupuesto soberano con debates comunitarios abiertos.')" class="submenu-link text-[11px]" style="border-bottom:none;">Planificación Participativa</a></li>
-                            </ul>
-                        </li>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Gobierno Popular</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Planificación y Presupuesto', 'T5: Poder Popular', 'Planificación estratégica.')" class="submenu-link text-[11px]">Dirección de Planificación y Presupuesto</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Comunas, Consejos Comunales y Movimientos Sociales', 'T5: Poder Popular', 'Organización popular.')" class="submenu-link text-[11px]">Dirección de Comunas, Consejos Comunales y Movimientos Sociales</a></li>
+                <li><a href="#" onclick="openDireccion('Sala Municipal de Autogobierno Popular y Comunal', 'T5: Poder Popular', 'Gestión autogestionada.')" class="submenu-link text-[11px]" style="border-bottom:none;">Sala Municipal de Autogobierno Popular y Comunal</a></li>
+            </ul>
+        </li>
 
-                        <!-- T6: Ecología y Preservación -->
-                        <li class="nested-submenu-container border-b border-gov-border">
-                            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
-                                <span class="font-medium flex items-center gap-2"><span class="bg-red-100 text-gov-wine rounded-full w-4 h-4 flex items-center justify-center text-[8px] font-bold">6</span> Ecología y Preservación</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
-                            </div>
-                            <ul class="nested-submenu">
-                                <li class="bg-gov-light px-4 py-1.5 text-[9px] font-bold text-gov-slate border-b border-gov-border uppercase">Direcciones T6</li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Ecosocialismo, Parques y Reciclaje', 'T6: Ecología', 'Coordina programas ambientales, cuidado del Parque Barro Negro y recolección de desechos selectiva.')" class="submenu-link text-[11px]">Ecosocialismo y Reciclaje</a></li>
-                                <li><a href="#" onclick="openDireccion('Oficina de Parques y Áreas Verdes', 'T6: Ecología', 'Saneamiento, desmalezamiento y paisajismo urbano en plazas, avenidas y zonas de recreo.')" class="submenu-link text-[11px]">Parques y Áreas Verdes</a></li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Aguas y Saneamiento Ambiental', 'T6: Ecología', 'Optimización técnica del sistema de acueductos municipales y limpieza de ríos y quebradas.')" class="submenu-link text-[11px]" style="border-bottom:none;">Aguas y Saneamiento</a></li>
-                            </ul>
-                        </li>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría Ecosocialista y Tecnológica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Ecosocialismo', 'T6: Ecología', 'Gestión ambiental.')" class="submenu-link text-[11px]">Dirección de Ecosocialismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Ciencia y Tecnología', 'T6: Ecología', 'Innovación técnica.')" class="submenu-link text-[11px]">Dirección de Ciencia y Tecnología</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Ecosocialismo, Ciencia y Tecnología', 'T6: Ecología', 'Coordinación integral.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Ecosocialismo, Ciencia y Tecnología</a></li>
+            </ul>
+        </li>
 
-                        <!-- T7: Geopolítica y Enlaces -->
-                        <li class="nested-submenu-container border-b border-gov-border">
-                            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
-                                <span class="font-medium flex items-center gap-2"><span class="bg-red-100 text-gov-wine rounded-full w-4 h-4 flex items-center justify-center text-[8px] font-bold">7</span> Geopolítica y Enlaces</span>
-                                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
-                            </div>
-                            <ul class="nested-submenu">
-                                <li class="bg-gov-light px-4 py-1.5 text-[9px] font-bold text-gov-slate border-b border-gov-border uppercase">Direcciones T7</li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Relaciones Interinstitucionales', 'T7: Geopolítica', 'Enlace estratégico con entes de la Gobernación de Lara y Ministerios nacionales para proyectos conjuntos.')" class="submenu-link text-[11px]">Relaciones Interinstitucionales</a></li>
-                                <li><a href="#" onclick="openDireccion('Oficina de Cooperación e Inversión', 'T7: Geopolítica', 'Promueve acuerdos de intercambio agrícola, cultural y técnico con municipios y entes afines.')" class="submenu-link text-[11px]">Cooperación e Inversión</a></li>
-                                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Comunitario y Redes Geopolíticas', 'T7: Geopolítica', 'Estudio estratégico del territorio de Crespo y empoderamiento de las micro-redes sociales de autogestión.')" class="submenu-link text-[11px]" style="border-bottom:none;">Desarrollo Comunitario</a></li>
-                            </ul>
-                        </li>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Recursos Humanos y Finanzas</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Gestión Humana', 'T7: Administrativa', 'Gestión de talento.')" class="submenu-link text-[11px]">Dirección de Gestión Humana</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Administración y Finanzas', 'T7: Administrativa', 'Gestión financiera.')" class="submenu-link text-[11px]">Dirección de Administración y Finanzas</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Hacienda', 'T7: Administrativa', 'Control tributario.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Hacienda</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
 
                         <!-- Organigrama -->
                         <li>
@@ -291,41 +283,41 @@
                     <div class="carrusel-contenedor">
                         <!-- Slide 1 -->
                         <div id="slide-0" class="carousel-item opacity-100 z-10">
-                            <div class="carousel-overlay" style="background: linear-gradient(to top right, var(--gov-dark), var(--gov-wine)); opacity: 0.85;"></div>
-                            <div class="space-y-2 max-w-2xl relative z-20">
-                                <span class="carousel-badge bg-gov-accent text-gov-dark">Infraestructura y Asfalto</span>
-                                <p class="text-xl md:text-2xl font-bold tracking-tight">Plan Integral de Asfalto e Iluminación en Duaca</p>
-                                <p class="text-xs text-slate-200 line-clamp-2">Llevamos soluciones viales concretas a las principales avenidas y arterias viales de la capital de Crespo y sus caseríos rurales.</p>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
+                                <span class="carousel-badge bg-gov-accent text-gov-dark">Salud y Atención Social</span>
+                                <p class="text-xl md:text-2xl font-bold tracking-tight">¡Comprometidos con la salud de nuestra gente!</p>
+                                <p class="text-xs text-slate-200 line-clamp-2">Junto a la gobernación del estado, hemos entregado material para la impermeabilización de 600 metros de techo en el Hospital Dr. Rafael Antonio Gil.</p>
                             </div>
                         </div>
 
                         <!-- Slide 2 -->
                         <div id="slide-1" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background: linear-gradient(to top right, var(--gov-green), var(--gov-dark)); opacity: 0.85;"></div>
-                            <div class="space-y-2 max-w-2xl relative z-20">
-                                <span class="carousel-badge bg-gov-green text-white">Atención Social</span>
-                                <p class="text-xl md:text-2xl font-bold tracking-tight">Jornada de Salud Directa "Pura Gente Buena"</p>
-                                <p class="text-xs text-slate-200 line-clamp-2">Atención médica gratuita, entrega directa de medicinas y valoraciones generales en el sector rural de las Parroquias Freitez y José M. Blanco.</p>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
+                                <span class="carousel-badge bg-gov-green text-white">Producción Pecuaria</span>
+                                <p class="text-xl md:text-2xl font-bold tracking-tight">Avanzamos en la consolidación de espacios productivos.</p>
+                                <p class="text-xs text-slate-200 line-clamp-2">Visitamos las instalaciones del Centro Genético de ganadería Gyr que viene a reforzar la producción de leche en nuestro municipio.</p>
                             </div>
                         </div>
 
                         <!-- Slide 3 -->
                         <div id="slide-2" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background: linear-gradient(to top right, var(--gov-wine), var(--gov-dark)); opacity: 0.85;"></div>
-                            <div class="space-y-2 max-w-2xl relative z-20">
-                                <span class="carousel-badge bg-gov-wine text-white">Cultura Municipal</span>
-                                <p class="text-xl md:text-2xl font-bold tracking-tight">Embellecimiento e Impulso Cultural en Plaza Bolívar</p>
-                                <p class="text-xs text-slate-200 line-clamp-2">Rehabilitamos y activamos espacios recreacionales públicos para el sano esparcimiento, la cultura tradicional y el disfrute familiar.</p>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
+                                <span class="carousel-badge bg-gov-wine text-white">Recreación y Esparcimiento</span>
+                                <p class="text-xl md:text-2xl font-bold tracking-tight">100% rehabilitada y operativa la piscina de nuestro Parque Duaca.</p>
+                                <p class="text-xs text-slate-200 line-clamp-2">Junto al gobernador de estado Lara @luisreyespsuv hemos reactivado este importante espacio de formación y recreación para los crespenses.</p>
                             </div>
                         </div>
 
                         <!-- Slide 4 -->
                         <div id="slide-3" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background: linear-gradient(to top right, var(--gov-green), var(--gov-wine)); opacity: 0.85;"></div>
-                            <div class="space-y-2 max-w-2xl relative z-20">
-                                <span class="carousel-badge bg-gov-wine text-white">Sector Caficultor</span>
-                                <p class="text-xl md:text-2xl font-bold tracking-tight">Entrega de Insumos y Apoyo a los Caficultores</p>
-                                <p class="text-xs text-slate-200 line-clamp-2">Fortalecemos la identidad productiva del municipio de la mano de los productores de café, motor de desarrollo de Crespo.</p>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/4.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
+                                <span class="carousel-badge bg-gov-wine text-white">Deporte y Cultura</span>
+                                <p class="text-xl md:text-2xl font-bold tracking-tight">Hemos reinaugurado la cancha de nuestro gimnasio Jacinto Lara.</p>
+                                <p class="text-xs text-slate-200 line-clamp-2">Además, hemos reconocido y homenajeado a los atletas que nos representaron en los recientes juegos deportivos estudiantiles.</p>
                             </div>
                         </div>
 
@@ -402,6 +394,16 @@
                             <span class="btn-tramite-desc">Actas de nacimiento, uniones y defunciones</span>
                         </div>
                     </button>
+                    <!-- Ordenanzas y Gacetas -->
+                    <button onclick="openModal('tramite-ordenanzas')" class="btn-tramite">
+                        <div class="btn-tramite-icono">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                        </div>
+                        <div>
+                            <span class="btn-tramite-titulo">Ordenanzas y Gacetas</span>
+                            <span class="btn-tramite-desc">Ejemplares de Gaceta Municipal, Ordenanzas y Decretos</span>
+                        </div>
+                    </button>
                 </div>
             </section>
 
@@ -415,68 +417,19 @@
                 
                 <!-- Izquierda: Instagram Feed Simulador -->
                 <div class="flex flex-col">
-                    <h5 class="footer-titulo">
-                        <i class="fa-brands fa-instagram text-white/80"></i>
-                        @JulioGarcesCrespo
-                    </h5>
-                    <div class="footer-widget">
-                        <div class="relative overflow-hidden h-36 bg-slate-950 flex items-center justify-center rounded">
-                            <!-- Post IG 1 -->
-                            <div id="ig-0" class="absolute inset-0 flex flex-col justify-between p-3 bg-slate-900/90 opacity-100 transition-opacity duration-1000 text-xs z-10">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-6 h-6 rounded-full bg-gov-wine text-white flex items-center justify-center font-bold text-[9px]">JG</div>
-                                    <div>
-                                        <p class="text-[10px] font-bold text-white leading-none">julio_garces_crespo</p>
-                                        <p class="text-[8px] text-slate-400">Hace 3 horas • Duaca, Lara</p>
-                                    </div>
-                                </div>
-                                <p class="text-[10px] text-slate-300 line-clamp-2 my-1">¡Seguimos de la mano de nuestra gente! Supervisando los trabajos de iluminación inteligente LED en las calles céntricas de la perla.</p>
-                                <div class="flex items-center justify-between text-[9px] text-gov-accent border-t border-slate-800 pt-1.5">
-                                    <span><i class="fa-solid fa-heart text-gov-wine mr-1"></i> 324 Me gusta</span>
-                                    <span><i class="fa-solid fa-comment mr-1"></i> 18 comentarios</span>
-                                </div>
-                            </div>
-
-                            <!-- Post IG 2 -->
-                            <div id="ig-1" class="absolute inset-0 flex flex-col justify-between p-3 bg-slate-900/90 opacity-0 transition-opacity duration-1000 text-xs">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-6 h-6 rounded-full bg-gov-wine text-white flex items-center justify-center font-bold text-[9px]">JG</div>
-                                    <div>
-                                        <p class="text-[10px] font-bold text-white leading-none">julio_garces_crespo</p>
-                                        <p class="text-[8px] text-slate-400">Hace 1 día • Baños de Guape</p>
-                                    </div>
-                                </div>
-                                <p class="text-[10px] text-slate-300 line-clamp-2 my-1">Plan de saneamiento ambiental ecológico activo en los Baños de Guape, recuperando el patrimonio hídrico municipal de Crespo.</p>
-                                <div class="flex items-center justify-between text-[9px] text-gov-accent border-t border-slate-800 pt-1.5">
-                                    <span><i class="fa-solid fa-heart text-gov-wine mr-1"></i> 412 Me gusta</span>
-                                    <span><i class="fa-solid fa-comment mr-1"></i> 29 comentarios</span>
-                                </div>
-                            </div>
-
-                            <!-- Post IG 3 -->
-                            <div id="ig-2" class="absolute inset-0 flex flex-col justify-between p-3 bg-slate-900/90 opacity-0 transition-opacity duration-1000 text-xs">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-6 h-6 rounded-full bg-gov-wine text-white flex items-center justify-center font-bold text-[9px]">JG</div>
-                                    <div>
-                                        <p class="text-[10px] font-bold text-white leading-none">julio_garces_crespo</p>
-                                        <p class="text-[8px] text-slate-400">Hace 2 días • Hospital de Duaca</p>
-                                    </div>
-                                </div>
-                                <p class="text-[10px] text-slate-300 line-clamp-2 my-1">Atención social integral y entrega técnica de insumos médicos de primera necesidad a los centros populares de salud.</p>
-                                <div class="flex items-center justify-between text-[9px] text-gov-accent border-t border-slate-800 pt-1.5">
-                                    <span><i class="fa-solid fa-heart text-gov-wine mr-1"></i> 501 Me gusta</span>
-                                    <span><i class="fa-solid fa-comment mr-1"></i> 34 comentarios</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex justify-center gap-1 mt-2">
-                            <span id="ig-dot-0" onclick="setIgPost(0)" class="w-1.5 h-1.5 rounded-full bg-white cursor-pointer transition-all"></span>
-                            <span id="ig-dot-1" onclick="setIgPost(1)" class="w-1.5 h-1.5 rounded-full bg-white/30 cursor-pointer transition-all"></span>
-                            <span id="ig-dot-2" onclick="setIgPost(2)" class="w-1.5 h-1.5 rounded-full bg-white/30 cursor-pointer transition-all"></span>
-                        </div>
-                    </div>
-                </div>
+                <h5 class="footer-titulo">
+        <i class="fa-brands fa-instagram text-white/80"></i>
+        @crespopuragentebuena
+    </h5>
+    <div class="footer-widget">
+        <div id="ig-carousel-container" class="relative overflow-hidden h-36 bg-slate-950 flex items-center justify-center rounded">
+            <div class="text-white/50 text-xs animate-pulse">Cargando publicaciones...</div>
+        </div>
+        
+        <div id="ig-dots-container" class="flex justify-center gap-1 mt-2">
+            </div>
+    </div>
+</div>
 
                 <!-- Centro: Dirección Física y Mapa Geográfico Leaflet -->
                 <div class="flex flex-col">
@@ -626,27 +579,117 @@
             showSlide(currentSlide);
         }
 
-        // --- 3. GESTIÓN DE INSTAGRAM SIMULADO ---
-        let currentIgPost = 0;
-        const totalIgPosts = 3;
+        // --- GESTIÓN DE INSTAGRAM DINÁMICO ---
+let currentIgPost = 0;
+let totalIgPosts = 0;
 
-        function showIgPost(index) {
-            for (let i = 0; i < totalIgPosts; i++) {
-                const post = document.getElementById(`ig-${i}`);
-                const dot = document.getElementById(`ig-dot-${i}`);
-                if (i === index) {
-                    post.classList.remove('opacity-0');
-                    post.classList.add('opacity-100', 'z-10');
-                    dot.classList.remove('bg-white/30');
-                    dot.classList.add('bg-white', 'scale-125');
-                } else {
-                    post.classList.remove('opacity-100', 'z-10');
-                    post.classList.add('opacity-0');
-                    dot.classList.remove('bg-white', 'scale-125');
-                    dot.classList.add('bg-white/30');
-                }
-            }
+// Configuración de la API (Requiere cuenta Business de IG y token de Meta for Developers)
+const IG_ACCESS_TOKEN = 'EAAYGtqmGOtwBRiOypcjW0CfQnwvhekBmjSP5Almg2KtGRc1FmmFxlWITZAur4ksMdlSQFhOeAo9pgFi10zac7CDU82XpoQunBZBpWX1xzH7pCAsSF2yb06vjFHSj8faaZBm4lnpl8JMGTEQ3EKkZCIh2oIaFQW3HRJceMIvhZAOZCTE9Etzjeay7V4A848QU1PJJrmp55J1F9MKZCjZCZBUfjT5WHiyV1gL14l6Snxe47oopYk8mNZBA5XqqgEwQJrsuRh9vleHZATUgZDZD'; 
+const IG_USER_ID = 'crespopuragentebuena';
+const LIMIT = 3; // Número de posts a mostrar en el carrusel
+const API_URL = `https://graph.facebook.com/v18.0/${IG_USER_ID}/media?fields=media_url,caption,like_count,comments_count,timestamp,permalink&limit=${LIMIT}&access_token=${IG_ACCESS_TOKEN}`;
+
+async function fetchInstagramPosts() {
+    try {
+        const response = await fetch(API_URL);
+        const data = await response.json();
+        
+        if (data && data.data) {
+            renderInstagramCarousel(data.data);
+        } else {
+            console.error('Error cargando los posts:', data.error);
         }
+    } catch (error) {
+        console.error('Error de conexión a la API de Instagram:', error);
+    }
+}
+
+function timeAgo(dateString) {
+    const postDate = new Date(dateString);
+    const now = new Date();
+    const diffInSeconds = Math.floor((now - postDate) / 1000);
+    
+    const hours = Math.floor(diffInSeconds / 3600);
+    if (hours < 24) {
+        return `Hace ${hours} ${hours === 1 ? 'hora' : 'horas'}`;
+    }
+    const days = Math.floor(hours / 24);
+    return `Hace ${days} ${days === 1 ? 'día' : 'días'}`;
+}
+
+function renderInstagramCarousel(posts) {
+    const container = document.getElementById('ig-carousel-container');
+    const dotsContainer = document.getElementById('ig-dots-container');
+    
+    container.innerHTML = '';
+    dotsContainer.innerHTML = '';
+    totalIgPosts = posts.length;
+
+    posts.forEach((post, index) => {
+        // 1. Crear la tarjeta del post
+        const isFirst = index === 0;
+        const opacityClass = isFirst ? 'opacity-100 z-10' : 'opacity-0 z-0';
+        
+        // Se añade la imagen real de fondo con background-image
+        const postHTML = `
+            <div id="ig-${index}" 
+                 class="absolute inset-0 flex flex-col justify-between p-3 bg-slate-900/90 transition-opacity duration-1000 text-xs ${opacityClass} bg-cover bg-center"
+                 style="background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('${post.media_url}');">
+                
+                <a href="${post.permalink}" target="_blank" class="flex flex-col h-full justify-between">
+                    <div class="flex items-center gap-2">
+                        <div class="w-6 h-6 rounded-full bg-gov-wine text-white flex items-center justify-center font-bold text-[9px]">JG</div>
+                        <div>
+                            <p class="text-[10px] font-bold text-white leading-none">@UsuarioInstitucional</p>
+                            <p class="text-[8px] text-slate-400">${timeAgo(post.timestamp)}</p>
+                        </div>
+                    </div>
+                    
+                    <p class="text-[10px] text-slate-300 line-clamp-2 my-1">${post.caption || ''}</p>
+                    
+                    <div class="flex items-center justify-between text-[9px] text-gov-accent border-t border-slate-800 pt-1.5">
+                        <span><i class="fa-solid fa-heart text-gov-wine mr-1"></i> ${post.like_count || 0} Me gusta</span>
+                        <span><i class="fa-solid fa-comment mr-1"></i> ${post.comments_count || 0} comentarios</span>
+                    </div>
+                </a>
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', postHTML);
+
+        // 2. Crear el punto de navegación (Dot)
+        const dotBgClass = isFirst ? 'bg-white scale-125' : 'bg-white/30';
+        const dotHTML = `
+            <span id="ig-dot-${index}" 
+                  onclick="showIgPost(${index})" 
+                  class="w-1.5 h-1.5 rounded-full ${dotBgClass} cursor-pointer transition-all">
+            </span>
+        `;
+        dotsContainer.insertAdjacentHTML('beforeend', dotHTML);
+    });
+}
+
+function showIgPost(index) {
+    for (let i = 0; i < totalIgPosts; i++) {
+        const post = document.getElementById(`ig-${i}`);
+        const dot = document.getElementById(`ig-dot-${i}`);
+        
+        if (i === index) {
+            post.classList.remove('opacity-0', 'z-0');
+            post.classList.add('opacity-100', 'z-10');
+            dot.classList.remove('bg-white/30');
+            dot.classList.add('bg-white', 'scale-125');
+        } else {
+            post.classList.remove('opacity-100', 'z-10');
+            post.classList.add('opacity-0', 'z-0');
+            dot.classList.remove('bg-white', 'scale-125');
+            dot.classList.add('bg-white/30');
+        }
+    }
+    currentIgPost = index;
+}
+
+// Inicializar la carga al abrir la página
+document.addEventListener('DOMContentLoaded', fetchInstagramPosts);
 
         function nextIgPost() {
             currentIgPost = (currentIgPost + 1) % totalIgPosts;
