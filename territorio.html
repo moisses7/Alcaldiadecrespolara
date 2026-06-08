@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografía y Territorio - Municipio Crespo</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gov: {
+                            wine: '#CE2029',
+                            dark: '#081E43',
+                            light: '#F8FAFC',
+                            slate: '#64748B',
+                            border: '#E2E8F0',
+                            accent: '#73A7DC',
+                            green: '#008B45'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="estilo.css">
+    
+    <style>
+        /* Estilos específicos para los pines vectoriales del mapa */
+        .custom-pin {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            color: white;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+        .custom-pin:hover {
+            transform: scale(1.25);
+            z-index: 999 !important;
+        }
+    </style>
+</head>
+<body class="bg-gov-light font-sans antialiased">
+
+    <header class="bg-[url('cintillo.png')] bg-cover bg-center border-gov-border min-h-[80px] w-full flex items-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            </div>
+    </header>
+
+ <nav class="nav-principal">
+        <div class="container">
+            <!-- Menú Móvil Cabecera -->
+            <div class="flex justify-between md:hidden py-3 px-4">
+                <span class="font-bold text-xs tracking-wider uppercase">PORTAL MUNICIPAL</span>
+                <button onclick="toggleMobileMenu()" class="text-white focus:outline-none hover:text-gray-200 transition">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Menú Desktop Horizontal -->
+            <ul id="desktop-menu" class="nav-menu-desktop">
+                
+                <!-- Item: Municipio Crespo -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-landmark text-white/80"></i>
+                        Municipio Crespo
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="simbolos-patrios.html" onclick="openModal('simbolos-patrios')" class="submenu-link"><i class="fa-solid fa-flag text-gov-slate text-[11px]"></i> Símbolos Patrios</a></li>
+                        <li><a href="simbolos-naturales.html" onclick="openModal('simbolos-naturales')" class="submenu-link"><i class="fa-solid fa-leaf text-gov-slate text-[11px]"></i> Símbolos Naturales</a></li>
+                        <li><a href="lugares-turisticos.html" onclick="openModal('lugares-turisticos')" class="submenu-link"><i class="fa-solid fa-map-pin text-gov-slate text-[11px]"></i> Lugares Turísticos</a></li>
+                        <li><a href="territorio.html" onclick="openModal('territorio')" class="submenu-link  bg-black/20"" style="border-bottom:none;"><i class="fa-solid fa-compass text-gov-slate text-[11px]"></i> Territorio</a></li>
+                    </ul>
+                </li>
+
+                <!-- Item: Alcalde -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-user text-white/80"></i>
+                        Alcalde
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="alcalde.html" onclick="openModal('alcalde-bio')" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-id-badge text-gov-slate text-[11px]"></i> Julio Garcés (Biografía)</a></li>
+                    </ul>
+                </li>
+
+                <!-- Item: Nosotros -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-circle-info text-white/80"></i>
+                        Nosotros
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                   <ul class="submenu">
+                        <li><a href="mision-vision.html" onclick="openModal('mision')" class="submenu-link"><i class="fa-solid fa-bullseye text-gov-slate text-[11px]"></i> Misión y Visión</a></li>
+                      </ul>  </ul>
+                </li>
+
+                <li class="nav-item">
+       <button class="nav-btn">
+        <i class="fa-solid fa-sitemap text-white/80"></i>
+        Secretarías 7 Transformaciones
+        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+        </button>
+    
+    <ul class="submenu" style="width: 22rem;">
+        <ul>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Económica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Agroproductivo, Comercial y Económico', 'T1: Económica', 'Potenciación de la siembra y apoyo técnico.')" class="submenu-link text-[11px]">Dirección de Desarrollo Agroproductivo, Comercial y Económico</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Turismo', 'T1: Económica', 'Promoción del turismo local.')" class="submenu-link text-[11px]">Dirección de Turismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Emprendimiento', 'T1: Económica', 'Apoyo a nuevos emprendedores.')" class="submenu-link text-[11px]">Dirección de Emprendimiento</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Economía Productiva', 'T1: Económica', 'Coordinación económica productiva.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Economía Productiva</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Servicios e Infraestructura</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Servicios Públicos', 'T2: Servicios', 'Gestión de servicios básicos.')" class="submenu-link text-[11px]">Dirección de Servicios Públicos</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Infraestructura', 'T2: Servicios', 'Desarrollo de obras y mantenimiento.')" class="submenu-link text-[11px]">Dirección de Infraestructura</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Catastro y Urbanismo', 'T2: Servicios', 'Ordenamiento territorial y catastro.')" class="submenu-link text-[11px]">Dirección de Catastro y Urbanismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Vialidad y Transporte Público', 'T2: Servicios', 'Gestión vial y transporte.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Vialidad y Transporte Público</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Seguridad y Prevención</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Interna', 'T3: Seguridad', 'Seguridad interna municipal.')" class="submenu-link text-[11px]">Dirección de Seguridad Interna</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Ciudadana', 'T3: Seguridad', 'Atención y convivencia.')" class="submenu-link text-[11px]">Dirección de Seguridad Ciudadana</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Prevención del Delito', 'T3: Seguridad', 'Planes de prevención.')" class="submenu-link text-[11px]">Órgano de Prevención del Delito</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Seguridad', 'T3: Seguridad', 'Coordinación de seguridad.')" class="submenu-link text-[11px]">Órgano Municipal de Seguridad</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Dirección de Defensa Integral', 'T3: Seguridad', 'Defensa y despliegue.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano de Dirección de Defensa Integral</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Social</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Social', 'T4: Social', 'Programas de desarrollo social.')" class="submenu-link text-[11px]">Dirección de Desarrollo Social</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Cultura', 'T4: Social', 'Gestión cultural.')" class="submenu-link text-[11px]">Dirección de Cultura</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal del Buen Gobierno', 'T4: Social', 'Eficiencia administrativa.')" class="submenu-link text-[11px]">Órgano Municipal del Buen Gobierno</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Alimentación', 'T4: Social', 'Soberanía alimentaria.')" class="submenu-link text-[11px]">Órgano Municipal de Alimentación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Salud y el Bienestar', 'T4: Social', 'Salud preventiva.')" class="submenu-link text-[11px]">Órgano Municipal de Salud y el Bienestar</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Educación', 'T4: Social', 'Fortalecimiento educativo.')" class="submenu-link text-[11px]">Órgano Municipal de Educación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Misiones y Grandes Misiones', 'T4: Social', 'Gestión de misiones.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Misiones y Grandes Misiones</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Gobierno Popular</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Planificación y Presupuesto', 'T5: Poder Popular', 'Planificación estratégica.')" class="submenu-link text-[11px]">Dirección de Planificación y Presupuesto</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Comunas, Consejos Comunales y Movimientos Sociales', 'T5: Poder Popular', 'Organización popular.')" class="submenu-link text-[11px]">Dirección de Comunas, Consejos Comunales y Movimientos Sociales</a></li>
+                <li><a href="#" onclick="openDireccion('Sala Municipal de Autogobierno Popular y Comunal', 'T5: Poder Popular', 'Gestión autogestionada.')" class="submenu-link text-[11px]" style="border-bottom:none;">Sala Municipal de Autogobierno Popular y Comunal</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría Ecosocialista y Tecnológica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Ecosocialismo', 'T6: Ecología', 'Gestión ambiental.')" class="submenu-link text-[11px]">Dirección de Ecosocialismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Ciencia y Tecnología', 'T6: Ecología', 'Innovación técnica.')" class="submenu-link text-[11px]">Dirección de Ciencia y Tecnología</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Ecosocialismo, Ciencia y Tecnología', 'T6: Ecología', 'Coordinación integral.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Ecosocialismo, Ciencia y Tecnología</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Recursos Humanos y Finanzas</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Gestión Humana', 'T7: Administrativa', 'Gestión de talento.')" class="submenu-link text-[11px]">Dirección de Gestión Humana</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Administración y Finanzas', 'T7: Administrativa', 'Gestión financiera.')" class="submenu-link text-[11px]">Dirección de Administración y Finanzas</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Hacienda', 'T7: Administrativa', 'Control tributario.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Hacienda</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+
+                        <!-- Organigrama -->
+                        <li>
+                            <a href="#" onclick="openModal('organigrama')" class="submenu-link text-gov-dark font-bold" style="border-bottom:none;">
+                                <i class="fa-solid fa-sitemap text-gov-slate text-[11px]"></i> Organigrama Municipal
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gov-dark border-t border-slate-700 px-4 py-3">
+            <ul class="space-y-3 text-xs">
+                <li>
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Municipio Crespo</p>
+                    <div class="grid grid-cols-2 gap-1.5 pl-2 text-slate-200">
+                        <a href="#" onclick="openModal('simbolos-patrios')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Símbolos Patrios</a>
+                        <a href="#" onclick="openModal('simbolos-naturales')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Símbolos Naturales</a>
+                        <a href="#" onclick="openModal('lugares-turisticos')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Turismo</a>
+                        <a href="#" onclick="openModal('territorio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Territorio</a>
+                    </div>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Alcalde</p>
+                    <a href="alcalde.html" onclick="openModal('alcalde-bio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block ml-2">Julio Garcés</a>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Nosotros</p>
+                    <div class="grid grid-cols-3 gap-1.5 pl-2">
+                        <a href="#" onclick="openModal('mision')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Misión</a>
+                        <a href="#" onclick="openModal('vision')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Visión</a>
+                        <a href="#" onclick="openModal('gestion-info')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Gestión</a>
+                    </div>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Plan 7T (Direcciones)</p>
+                    <div class="space-y-1.5 pl-2">
+                        <button onclick="toggleMobile7T()" class="w-full text-left text-[11px] bg-gov-wine/60 p-2 rounded flex justify-between items-center text-white">
+                            <span>Ver Direcciones de las 7T</span>
+                            <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                        </button>
+                        <div id="mobile-7t-list" class="hidden space-y-1 p-2 bg-gov-dark/50 rounded border border-slate-700">
+                            <a href="#" onclick="openModal('organigrama')" class="block text-center bg-white/10 p-2 rounded text-white font-bold mb-2">Ver Organigrama Completo</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 space-y-6">
+        
+        <div class="border-b-2 border-gov-wine pb-3">
+            <span class="text-[10px] uppercase font-extrabold tracking-widest text-gov-slate">Geografía, Clima y Capacidades Económicas</span>
+            <h1 class="text-2xl md:text-3xl font-black text-gov-dark mt-0.5">Mapa Interactivo del Municipio Crespo</h1>
+            <p class="text-xs text-slate-600 mt-1 max-w-3xl leading-relaxed">
+                Explore las potencialidades del Municipio Crespo. Desplace el puntero del mouse sobre los diferentes marcadores del mapa para auditar en tiempo real la altitud, rubros de siembra y tipos de producción pecuaria de cada zona.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-stretch">
+            
+            <div class="bg-white p-4 rounded-xl border border-gov-border shadow-sm flex flex-col space-y-2">
+                <div class="border-b border-gov-border pb-2 mb-1">
+                    <span class="text-[9px] uppercase font-bold tracking-wider text-gov-slate"><i class="fa-solid fa-folder-open mr-1 text-gov-wine"></i> Directorio</span>
+                    <h3 class="text-xs font-black text-gov-dark uppercase tracking-wide mt-0.5">Sitios Referidos</h3>
+                </div>
+                <div id="panel-izquierdo-sitios" class="flex flex-col gap-2 overflow-y-auto max-h-[500px] lg:max-h-[530px] pr-1">
+                    </div>
+            </div>
+            
+            <div class="lg:col-span-3 bg-white p-3 rounded-xl border border-gov-border shadow-sm min-h-[500px] lg:min-h-[600px] flex flex-col justify-between">
+                <div id="mapa-territorial" class="w-full h-full min-h-[480px] lg:min-h-[570px] rounded-lg border border-slate-200 relative z-10"></div>
+            </div>
+
+            <div id="panel-ficha" class="bg-white p-5 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between transition-all duration-300">
+                <div class="space-y-4">
+                    <div class="border-b border-gov-border pb-3">
+                        <span id="ficha-tipo" class="text-[9px] uppercase font-bold tracking-wider text-gov-wine bg-red-50 px-2 py-0.5 rounded">Indicador Regional</span>
+                        <h2 id="ficha-titulo" class="text-base font-black text-gov-dark uppercase tracking-wide mt-1.5">Municipio Crespo</h2>
+                        <p id="ficha-sub" class="text-[11px] text-gov-slate mt-0.5">Pase el mouse sobre un punto del mapa.</p>
+                    </div>
+
+                    <div class="space-y-3.5 text-xs">
+                        <div class="bg-slate-50 p-2.5 rounded border border-gov-border">
+                            <span class="text-[10px] uppercase font-bold text-gov-slate block"><i class="fa-solid fa-mountain mr-1 text-gov-accent"></i> Altura sobre el Nivel del Mar</span>
+                            <span id="ficha-altitud" class="font-bold text-gov-dark text-sm block mt-0.5">Variable msnm</span>
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-gov-green block mb-1"><i class="fa-solid fa-seedling mr-1"></i> Produc. Agrícola (Siembra)</span>
+                            <p id="ficha-agricola" class="text-slate-600 leading-relaxed text-justify">Información clasificada de los cultivos tradicionales según el piso térmico de la comunidad.</p>
+                        </div>
+
+                        <div>
+                            <span class="text-[10px] uppercase font-bold text-amber-700 block mb-1"><i class="fa-solid fa-cow mr-1"></i> Actividad Pecuaria (Cría)</span>
+                            <p id="ficha-pecuaria" class="text-slate-600 leading-relaxed text-justify">Detalles sobre la cría ganadera, caprina, porcina u ovina de la zona seleccionada.</p>
+                        </div>
+
+                        <div class="pt-2 border-t border-dashed border-gov-border">
+                            <span class="text-[10px] uppercase font-bold text-gov-dark block mb-1"><i class="fa-solid fa-map-location-dot mr-1 text-gov-wine"></i> Atractivo Turístico</span>
+                            <p id="ficha-turismo" class="text-slate-500 italic text-justify">Patrimonio histórico, religioso o natural adyacente.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-gov-border text-[10px] text-gov-slate flex items-center justify-between font-medium">
+                    <span>Estado Lara</span>
+                    <span class="uppercase font-bold text-gov-dark tracking-wider text-[9px]">Eje Norte-Este</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-gov-dark text-slate-400 text-xs py-6 mt-12 border-t-4 border-gov-wine text-center">
+        <p>© 2026 Alcaldía Bolivariana del Municipio Crespo. "Sacándole el brillo a la Perla".</p>
+    </footer>
+
+    <script>
+        // Función básica para colapsar/mostrar menú móvil
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+
+        // 1. BANCO DE DATOS GEOGRÁFICOS DE CRESPO (Parroquias, Capital, Instituciones y Comunidades)
+        const puntosTerritorio = {
+            duaca: {
+                titulo: "Duaca (Capital Municipal)",
+                sub: "Eje Urbano - Parroquia Fréitez",
+                tipo: "Capital del Municipio",
+                altitud: "730 msnm",
+                agricola: "Centro de acopio regional. Siembra periférica de caña de azúcar, maíz, hortalizas y leguminosas.",
+                pecuaria: "Ganadería vacuna (bovina) de doble propósito, desarrollo de porcinocultura comercial regular.",
+                turismo: "Casco Central Colonial, arquitectura de principios del siglo XX y Paseo de los Artesanos.",
+                latlng: [10.2925, -69.1610],
+                icon: "fa-circle-dot",
+                color: "#CE2029" // Rojo institucional para la Capital
+            },
+            alcaldia: {
+                titulo: "Alcaldía del Municipio Crespo",
+                sub: "Casco Central de Duaca",
+                tipo: "Sede de Gobierno",
+                altitud: "732 msnm",
+                agricola: "Despacho del Alcalde Julio Garcés y Dirección de Desarrollo Agroproductivo.",
+                pecuaria: "Unidad de guías de movilización de ganado vacuno y registros sanitarios locales.",
+                turismo: "Palacio Municipal, sede de los poderes públicos y edificación de alto valor histórico institucional.",
+                latlng: [10.2913, -69.1627],
+                icon: "fa-building-columns",
+                color: "#081E43" // Azul oscuro gubernamental
+            },
+            plaza: {
+                titulo: "Plaza Bolívar de Duaca",
+                sub: "Casco Central de Duaca",
+                tipo: "Espacio Público Histórico",
+                altitud: "730 msnm",
+                agricola: "Área urbana. Eje central de confluencia civil y comunitaria.",
+                pecuaria: "N/A",
+                turismo: "Monumento pedestre al Libertador, áreas verdes protegidas y punto de partida de actividades culturales.",
+                latlng: [10.2920, -69.1623],
+                icon: "fa-tree",
+                color: "#008B45" // Verde
+            },
+            iglesia: {
+                titulo: "Santuario Diocesano San Juan",
+                sub: "Frente a la Plaza Bolívar",
+                tipo: "Patrimonio Religioso Nacional",
+                altitud: "731 msnm",
+                agricola: "N/A (Sede eclesiástica central de las tradicionales fiestas patronales del municipio).",
+                pecuaria: "N/A",
+                turismo: "Monumento arquitectónico imponente y famoso por sus cinco cúpulas visibles desde las colinas.",
+                latlng: [10.2926, -69.1620],
+                icon: "fa-church",
+                color: "#CE2029"
+            },
+            eneal: {
+                titulo: "El Eneal",
+                sub: "Capital de la Parroquia J.M. Blanco",
+                tipo: "Población / Capital Parroquial",
+                altitud: "580 msnm",
+                agricola: "Tierra de alta productividad. Famosa por el cultivo masivo de piña de alta calidad para consumo nacional, caña de azúcar y plantas textiles como el sísal.",
+                pecuaria: "Fuerte desarrollo de producción caprina (cría de chivos) y producción ovina (ovejos), fabricación artesanal de quesos y sueros de cabra.",
+                turismo: "Mercados artesanales de tejidos en sísal y la reconocida Ruta Gastronómica de El Eneal.",
+                latlng: [10.2241, -69.2134],
+                icon: "fa-location-crosshairs",
+                color: "#73A7DC" // Azul claro parroquial
+            },
+            barronegro: {
+                titulo: "Comunidad de Barro Negro",
+                sub: "Zona Alta - Parroquia Fréitez",
+                tipo: "Asentamiento de Montaña",
+                altitud: "1.150 msnm",
+                agricola: "Piso climático fresco idóneo para la siembra de café de alta especialidad, aguacates, caraotas y legumbres.",
+                pecuaria: "Ganadería vacuna de altura lechera a pequeña y mediana escala.",
+                turismo: "Bosque Nublado Protegido de Barro Negro, senderos ecológicos de montaña y avistamiento del ave Azulejo.",
+                latlng: [10.3420, -69.2010],
+                icon: "fa-mountain-sun",
+                color: "#008B45"
+            },
+            licua: {
+                titulo: "Sector Agrícola Licua",
+                sub: "Valles de la Parroquia Fréitez",
+                tipo: "Comunidad Productiva Mecanizada",
+                altitud: "690 msnm",
+                agricola: "Eje de valles planos con extensas plantaciones tecnificadas de caña de azúcar y siembra estacional de maíz.",
+                pecuaria: "Cría estabulada y semiestabulada de ganado vacuno (carne y leche de alto rendimiento).",
+                turismo: "Ruta histórica de los antiguos ingenios azucareros tradicionales y haciendas coloniales de Duaca.",
+                latlng: [10.3150, -69.1250],
+                icon: "fa-wheat-awn",
+                color: "#64748B"
+            }
+        };
+
+        // 2. INICIALIZACIÓN DEL MAPA AL CARGAR LA VENTANA
+        window.onload = function() {
+            // Coordenadas aproximadas del Municipio Crespo para centrar la toma
+            const centroCrespo = [10.2850, -69.1620];
+            
+            const map = L.map('mapa-territorial', {
+                center: centroCrespo,
+                zoom: 12,
+                zoomControl: true
+            });
+
+            // ====================================================================
+            // SOLUCIÓN DEFINITIVA AL ACCESS BLOCKED: SERVIDORES INSTITUCIONALES ESRI
+            // ====================================================================
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+                maxZoom: 19,
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2026'
+            }).addTo(map);
+
+            const leftPanel = document.getElementById('panel-izquierdo-sitios');
+
+            // 3. GENERACIÓN INTERACTIVA DE MARCADORES Y ELEMENTOS DEL PANEL IZQUIERDO
+            Object.keys(puntosTerritorio).forEach(key => {
+                const p = puntosTerritorio[key];
+
+                // --- GENERAR MARCADOR EN EL MAPA ---
+                const customIcon = L.divIcon({
+                    className: 'custom-html-icon',
+                    html: `<div class="custom-pin" style="background-color: ${p.color}; width: 34px; height: 34px;"><i class="fa-solid ${p.icon} text-white text-[13px]"></i></div>`,
+                    iconSize: [34, 34],
+                    iconAnchor: [17, 17]
+                });
+
+                const marker = L.marker(p.latlng, { icon: customIcon }).addTo(map);
+
+                marker.bindTooltip(`<div class="font-sans text-xs"><b>${p.titulo}</b></div>`, {
+                    direction: 'top',
+                    offset: [0, -10]
+                });
+
+                // --- GENERAR BOTÓN INTERACTIVO EN EL PANEL IZQUIERDO ---
+                const btnSitio = document.createElement('button');
+                btnSitio.className = "w-full text-left p-2 rounded-lg border border-slate-100 hover:border-gov-wine bg-slate-50/70 hover:bg-red-50/20 transition-all text-xs flex items-center gap-2.5 group";
+                btnSitio.innerHTML = `
+                    <div class="w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-[10px] text-white shadow-sm transition-transform group-hover:scale-110" style="background-color: ${p.color}">
+                        <i class="fa-solid ${p.icon}"></i>
+                    </div>
+                    <div class="truncate">
+                        <p class="font-bold text-gov-dark truncate group-hover:text-gov-wine transition-colors">${p.titulo}</p>
+                        <p class="text-[9px] text-gov-slate truncate">${p.sub}</p>
+                    </div>
+                `;
+
+                // --- LÓGICA DE EVENTOS COMPARTIDOS (MAPA Y LISTA IZQUIERDA) ---
+                function activarFichaInformativa() {
+                    document.getElementById('ficha-tipo').innerText = p.tipo;
+                    document.getElementById('ficha-titulo').innerText = p.titulo;
+                    document.getElementById('ficha-sub').innerText = p.sub;
+                    document.getElementById('ficha-altitud').innerText = p.altitud;
+                    document.getElementById('ficha-agricola').innerText = p.agricola;
+                    document.getElementById('ficha-pecuaria').innerText = p.pecuaria;
+                    document.getElementById('ficha-turismo').innerText = p.turismo;
+                    document.getElementById('panel-ficha').style.borderColor = p.color;
+                }
+
+                function desactivarFichaInformativa() {
+                    document.getElementById('panel-ficha').style.borderColor = '#E2E8F0';
+                }
+
+                function enfocarEnMapa() {
+                    map.panTo(p.latlng);
+                    map.setZoom(15);
+                    marker.openTooltip();
+                }
+
+                // Asignar eventos al marcador físico del mapa
+                marker.on('mouseover', activarFichaInformativa);
+                marker.on('mouseout', desactivarFichaInformativa);
+                marker.on('click', enfocarEnMapa);
+
+                // Asignar eventos al botón del panel izquierdo
+                btnSitio.onmouseover = activarFichaInformativa;
+                btnSitio.onmouseout = desactivarFichaInformativa;
+                btnSitio.onclick = function() {
+                    activarFichaInformativa();
+                    enfocarEnMapa();
+                };
+
+                // Insertar el botón en el panel izquierdo
+                leftPanel.appendChild(btnSitio);
+            });
+        };
+    </script>
+</body>
+</html>

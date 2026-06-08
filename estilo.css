@@ -141,7 +141,7 @@ body {
    4. BARRA DE NAVEGACIÓN (NAV) Y MENÚS DESPLEGABLES
    -------------------------------------------------------------------------- */
 .nav-principal {
-    background-color: var(--gov-wine);
+    background: linear-gradient(135deg, var(--gov-wine) 0%, #1557c4 100%, var(--gov-wine) 50%);
     color: #ffffff;
     position: sticky;
     top: 0;
@@ -154,7 +154,7 @@ body {
     display: none;
     list-style: none;
     align-items: center;
-    font-size: 0.75rem; /* 12px */
+    font-size: 0.80rem; /* 12px */
     font-weight: 600;
 }
 
@@ -184,7 +184,7 @@ body {
     position: absolute;
     left: 0;
     top: 100%;
-    margin-top: 0.5rem;
+    margin-top: 0rem;
     width: 13rem;
     background-color: #ffffff;
     color: var(--gov-dark);

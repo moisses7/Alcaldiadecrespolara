@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biografía Oficial - Alcalde Julio Garcés</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gov: {
+                            wine: '#CE2029',
+                            dark: '#081E43',
+                            light: '#F8FAFC',
+                            slate: '#64748B',
+                            border: '#E2E8F0',
+                            accent: '#73A7DC',
+                            green: '#008B45'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="bg-gov-light font-sans antialiased">
+
+    <header class="bg-[url('cintillo.png')] bg-cover bg-center border-b border-gov-border min-h-[80px] w-full flex items-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            </div>
+    </header>
+
+    <nav class="nav-principal">
+        <div class="container">
+            <!-- Menú Móvil Cabecera -->
+            <div class="flex justify-between md:hidden py-3 px-4">
+                <span class="font-bold text-xs tracking-wider uppercase">PORTAL MUNICIPAL</span>
+                <button onclick="toggleMobileMenu()" class="text-white focus:outline-none hover:text-gray-200 transition">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Menú Desktop Horizontal -->
+            <ul id="desktop-menu" class="nav-menu-desktop">
+                
+                <!-- Item: Municipio Crespo -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-landmark text-white/80"></i>
+                        Municipio Crespo
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="simbolos-patrios.html" onclick="openModal('simbolos-patrios')" class="submenu-link"><i class="fa-solid fa-flag text-gov-slate text-[11px]"></i> Símbolos Patrios</a></li>
+                        <li><a href="simbolos-naturales.html" onclick="openModal('simbolos-naturales')" class="submenu-link"><i class="fa-solid fa-leaf text-gov-slate text-[11px]"></i> Símbolos Naturales</a></li>
+                        <li><a href="lugares-turisticos.html" onclick="openModal('lugares-turisticos')" class="submenu-link"><i class="fa-solid fa-map-pin text-gov-slate text-[11px]"></i> Lugares Turísticos</a></li>
+                        <li><a href="territorio.html" onclick="openModal('territorio')" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-compass text-gov-slate text-[11px]"></i> Territorio</a></li>
+                    </ul>
+                </li>
+
+                <!-- Item: Alcalde -->
+                <li class="nav-item">
+                    <button class="nav-btn bg-black/15">
+                        <i class="fa-solid fa-user text-white/80"></i>
+                        Alcalde
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                </li>
+
+                <!-- Item: Nosotros -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-circle-info text-white/80"></i>
+                        Nosotros
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                     <ul class="submenu">
+                        <li><a href="mision-vision.html" class="submenu-link"><i class="fa-solid fa-bullseye text-gov-slate text-[11px]"></i> Misión y Visión</a></li>
+                      </ul></ul>
+                </li>
+
+                <li class="nav-item">
+       <button class="nav-btn">
+        <i class="fa-solid fa-sitemap text-white/80"></i>
+        Secretarías 7 Transformaciones
+        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+        </button>
+    
+    <ul class="submenu" style="width: 22rem;">
+        <ul>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Económica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Agroproductivo, Comercial y Económico', 'T1: Económica', 'Potenciación de la siembra y apoyo técnico.')" class="submenu-link text-[11px]">Dirección de Desarrollo Agroproductivo, Comercial y Económico</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Turismo', 'T1: Económica', 'Promoción del turismo local.')" class="submenu-link text-[11px]">Dirección de Turismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Emprendimiento', 'T1: Económica', 'Apoyo a nuevos emprendedores.')" class="submenu-link text-[11px]">Dirección de Emprendimiento</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Economía Productiva', 'T1: Económica', 'Coordinación económica productiva.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Economía Productiva</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Servicios e Infraestructura</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Servicios Públicos', 'T2: Servicios', 'Gestión de servicios básicos.')" class="submenu-link text-[11px]">Dirección de Servicios Públicos</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Infraestructura', 'T2: Servicios', 'Desarrollo de obras y mantenimiento.')" class="submenu-link text-[11px]">Dirección de Infraestructura</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Catastro y Urbanismo', 'T2: Servicios', 'Ordenamiento territorial y catastro.')" class="submenu-link text-[11px]">Dirección de Catastro y Urbanismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Vialidad y Transporte Público', 'T2: Servicios', 'Gestión vial y transporte.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Vialidad y Transporte Público</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Seguridad y Prevención</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Interna', 'T3: Seguridad', 'Seguridad interna municipal.')" class="submenu-link text-[11px]">Dirección de Seguridad Interna</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Ciudadana', 'T3: Seguridad', 'Atención y convivencia.')" class="submenu-link text-[11px]">Dirección de Seguridad Ciudadana</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Prevención del Delito', 'T3: Seguridad', 'Planes de prevención.')" class="submenu-link text-[11px]">Órgano de Prevención del Delito</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Seguridad', 'T3: Seguridad', 'Coordinación de seguridad.')" class="submenu-link text-[11px]">Órgano Municipal de Seguridad</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Dirección de Defensa Integral', 'T3: Seguridad', 'Defensa y despliegue.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano de Dirección de Defensa Integral</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Social</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Social', 'T4: Social', 'Programas de desarrollo social.')" class="submenu-link text-[11px]">Dirección de Desarrollo Social</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Cultura', 'T4: Social', 'Gestión cultural.')" class="submenu-link text-[11px]">Dirección de Cultura</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal del Buen Gobierno', 'T4: Social', 'Eficiencia administrativa.')" class="submenu-link text-[11px]">Órgano Municipal del Buen Gobierno</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Alimentación', 'T4: Social', 'Soberanía alimentaria.')" class="submenu-link text-[11px]">Órgano Municipal de Alimentación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Salud y el Bienestar', 'T4: Social', 'Salud preventiva.')" class="submenu-link text-[11px]">Órgano Municipal de Salud y el Bienestar</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Educación', 'T4: Social', 'Fortalecimiento educativo.')" class="submenu-link text-[11px]">Órgano Municipal de Educación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Misiones y Grandes Misiones', 'T4: Social', 'Gestión de misiones.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Misiones y Grandes Misiones</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Gobierno Popular</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Planificación y Presupuesto', 'T5: Poder Popular', 'Planificación estratégica.')" class="submenu-link text-[11px]">Dirección de Planificación y Presupuesto</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Comunas, Consejos Comunales y Movimientos Sociales', 'T5: Poder Popular', 'Organización popular.')" class="submenu-link text-[11px]">Dirección de Comunas, Consejos Comunales y Movimientos Sociales</a></li>
+                <li><a href="#" onclick="openDireccion('Sala Municipal de Autogobierno Popular y Comunal', 'T5: Poder Popular', 'Gestión autogestionada.')" class="submenu-link text-[11px]" style="border-bottom:none;">Sala Municipal de Autogobierno Popular y Comunal</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría Ecosocialista y Tecnológica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Ecosocialismo', 'T6: Ecología', 'Gestión ambiental.')" class="submenu-link text-[11px]">Dirección de Ecosocialismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Ciencia y Tecnología', 'T6: Ecología', 'Innovación técnica.')" class="submenu-link text-[11px]">Dirección de Ciencia y Tecnología</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Ecosocialismo, Ciencia y Tecnología', 'T6: Ecología', 'Coordinación integral.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Ecosocialismo, Ciencia y Tecnología</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Recursos Humanos y Finanzas</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Gestión Humana', 'T7: Administrativa', 'Gestión de talento.')" class="submenu-link text-[11px]">Dirección de Gestión Humana</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Administración y Finanzas', 'T7: Administrativa', 'Gestión financiera.')" class="submenu-link text-[11px]">Dirección de Administración y Finanzas</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Hacienda', 'T7: Administrativa', 'Control tributario.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Hacienda</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+
+                        <!-- Organigrama -->
+                        <li>
+                            <a href="#" onclick="openModal('organigrama')" class="submenu-link text-gov-dark font-bold" style="border-bottom:none;">
+                                <i class="fa-solid fa-sitemap text-gov-slate text-[11px]"></i> Organigrama Municipal
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gov-dark border-t border-slate-700 px-4 py-3">
+            <ul class="space-y-3 text-xs">
+                <li>
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Municipio Crespo</p>
+                    <div class="grid grid-cols-2 gap-1.5 pl-2 text-slate-200">
+                        <a href="#" onclick="openModal('simbolos-patrios')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Símbolos Patrios</a>
+                        <a href="#" onclick="openModal('simbolos-naturales')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Símbolos Naturales</a>
+                        <a href="#" onclick="openModal('lugares-turisticos')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Turismo</a>
+                        <a href="#" onclick="openModal('territorio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Territorio</a>
+                    </div>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Alcalde</p>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Nosotros</p>
+                    <div class="grid grid-cols-3 gap-1.5 pl-2">
+                        <a href="#" onclick="openModal('mision')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Misión</a>
+                        <a href="#" onclick="openModal('vision')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Visión</a>
+                        <a href="#" onclick="openModal('gestion-info')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Gestión</a>
+                    </div>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Plan 7T (Direcciones)</p>
+                    <div class="space-y-1.5 pl-2">
+                        <button onclick="toggleMobile7T()" class="w-full text-left text-[11px] bg-gov-wine/60 p-2 rounded flex justify-between items-center text-white">
+                            <span>Ver Direcciones de las 7T</span>
+                            <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                        </button>
+                        <div id="mobile-7t-list" class="hidden space-y-1 p-2 bg-gov-dark/50 rounded border border-slate-700">
+                            <a href="#" onclick="openModal('organigrama')" class="block text-center bg-white/10 p-2 rounded text-white font-bold mb-2">Ver Organigrama Completo</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+   <main class="max-w-6xl mx-auto px-4 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <div class="md:col-span-4 bg-white p-6 rounded-xl border border-gov-border shadow-sm flex flex-col items-center">
+            
+            <div class="w-56 h-72 bg-gov-dark rounded-lg overflow-hidden border-4 border-gov-border shadow-inner flex items-center justify-center relative group mb-5">
+                <img src="juliog.jpeg" alt="Alcalde Julio Garcés" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/250x320/081e43/ffffff?text=Abg.+Julio+Garc%C3%A9s'">
+                <div class="absolute bottom-0 inset-x-0 bg-gov-wine/90 text-white text-xs text-center py-1.5 font-bold tracking-wider">
+                    PERÍODO 2025 - 2029
+                </div>
+            </div>
+
+            <div class="text-center w-full border-b border-gov-border pb-4 mb-4">
+                <h2 class="text-xl font-extrabold text-gov-dark leading-tight">Julio Garcés</h2>
+                <p class="text-xs text-gov-wine font-bold uppercase tracking-wider mt-1.5">Alcalde del Municipio Crespo</p>
+                <p class="text-[12px] text-gov-slate mt-0.5">Abogado de la República</p>
+            </div>
+
+            <div class="w-full text-center">
+                <p class="text-xs font-bold text-gov-dark uppercase tracking-widest mb-3">Redes Personales</p>
+                <div class="flex justify-center gap-3">
+                    <a href="https://www.facebook.com/juliogarcesalcalde" target="_blank" class="w-10 h-10 rounded-full bg-gov-dark hover:bg-gov-wine text-white flex items-center justify-center transition shadow-xs" title="X (Twitter)">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/juliogarcesalcalde/?hl=es" target="_blank" class="w-10 h-10 rounded-full bg-gov-dark hover:bg-gov-wine text-white flex items-center justify-center transition shadow-xs" title="Instagram">
+                        <i class="fa-brands fa-instagram text-base"></i>
+                    </a>
+                    <a href="https://x.com/JulioGarcesA" target="_blank" class="w-10 h-10 rounded-full bg-gov-dark hover:bg-gov-wine text-white flex items-center justify-center transition shadow-xs" title="X (Twitter)">
+                        <i class="fa-brands fa-x-twitter text-base"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="md:col-span-8 bg-white p-8 rounded-xl border border-gov-border shadow-sm">
+            
+            <div class="border-b-2 border-gov-wine pb-3 mb-6">
+                <span class="text-[10px] uppercase font-extrabold tracking-widest text-gov-slate">Perfil del Alcalde</span>
+                <h1 class="text-2xl md:text-3xl font-black text-gov-dark mt-0.5">Reseña Biográfica</h1>
+            </div>
+
+            <div class="space-y-4 text-slate-700 text-xs md:text-sm leading-relaxed alignment-justify">
+                
+                <p>
+                    El <strong class="text-gov-dark">Abogado Julio Garcés</strong> es un profesional del derecho y dirigente político venezolano, profundamente arraigado a las luchas sociales y comunales del Estado Lara. Con una sólida vocación de servicio público, ha dedicado gran parte de su trayectoria al estudio de las leyes, el derecho administrativo y el fortalecimiento de la organización popular como base para la transformación institucional.
+                </p>
+
+                <div class="bg-gov-light p-4 rounded-lg border-l-4 border-gov-wine my-4">
+                    <h3 class="font-bold text-gov-dark text-xs uppercase mb-1"><i class="fa-solid fa-graduation-cap mr-1 text-gov-wine"></i> Formación y Valores</h3>
+                    <p class="text-slate-600 text-xs">
+                        Egresado en el ámbito de las ciencias jurídicas, su formación como abogado le ha permitido estructurar políticas públicas locales bajo un estricto marco de legalidad, transparencia y justicia social, priorizando siempre la defense jurídica de las comunidades más vulnerables.
+                    </p>
+                </div>
+
+                <p>
+                    A lo largo de su carrera política, Garcés ha asumido roles clave en la articulación entre los niveles de gobierno regional y local, consolidándose como un líder aglutinador. Su enfoque metodológico se alinea de forma directa con las directrices estratégicas de desarrollo nacional, promoviendo de manera constante la contraloría social y el diseño participativo del presupuesto soberano.
+                </p>
+
+                <h3 class="text-sm font-bold text-gov-dark uppercase border-b border-gov-border pt-2 pb-1 flex items-center">
+                    <i class="fa-solid fa-gem mr-2 text-gov-wine"></i> Gestión: "Sacándole el Brillo a la Perla"
+                </h3>
+
+                <p>
+                    Tras ser electo por el Poder Popular como Alcalde del Municipio Crespo, asumió el compromiso de recuperar los espacios públicos, optimizar la red de servicios básicos y potenciar las capacidades agroproductivas de la región, especialmente en los sectores cafetaleros de las parroquias Fréitez y José María Blanco. 
+                </p>
+
+                <p>
+                    Bajo el lema de gestión <span class="italic font-semibold text-gov-wine">"Sacándole el brillo a la Perla"</span>, promueve activamente un modelo de gobierno descentralizado, de calle y con despliegue permanente directos en los caseríos, impulsando la salud preventiva, el plan de asfalto urbano y el renacimiento cultural de Duaca como epicentro turístico e histórico del norte de Lara.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</main>
+
+    <script>
+        // Gestión del Menú Móvil
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

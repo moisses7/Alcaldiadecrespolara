@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misión y Visión - Alcaldía del Municipio Crespo</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gov: {
+                            wine: '#CE2029',
+                            dark: '#081E43',
+                            light: '#F8FAFC',
+                            slate: '#64748B',
+                            border: '#E2E8F0',
+                            accent: '#73A7DC',
+                            green: '#008B45'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="bg-gov-light font-sans antialiased">
+
+    <header class="bg-[url('cintillo.png')] bg-cover bg-center border-gov-border min-h-[80px] w-full flex items-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            </div>
+    </header>
+
+<nav class="nav-principal">
+        <div class="container">
+            <!-- Menú Móvil Cabecera -->
+            <div class="flex justify-between md:hidden py-3 px-4">
+                <span class="font-bold text-xs tracking-wider uppercase">PORTAL MUNICIPAL</span>
+                <button onclick="toggleMobileMenu()" class="text-white focus:outline-none hover:text-gray-200 transition">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Menú Desktop Horizontal -->
+            <ul id="desktop-menu" class="nav-menu-desktop">
+                
+                <!-- Item: Municipio Crespo -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-landmark text-white/80"></i>
+                        Municipio Crespo
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="simbolos-patrios.html" onclick="openModal('simbolos-patrios')" class="submenu-link"><i class="fa-solid fa-flag text-gov-slate text-[11px]"></i> Símbolos Patrios</a></li>
+                        <li><a href="simbolos-naturales.html" onclick="openModal('simbolos-naturales')" class="submenu-link"><i class="fa-solid fa-leaf text-gov-slate text-[11px]"></i> Símbolos Naturales</a></li>
+                        <li><a href="lugares-turisticos.html" onclick="openModal('lugares-turisticos')" class="submenu-link"><i class="fa-solid fa-map-pin text-gov-slate text-[11px]"></i> Lugares Turísticos</a></li>
+                        <li><a href="territorio.html" onclick="openModal('territorio')" class="submenu-link  bg-black/20"" style="border-bottom:none;"><i class="fa-solid fa-compass text-gov-slate text-[11px]"></i> Territorio</a></li>
+                    </ul>
+                </li>
+
+                <!-- Item: Alcalde -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-user text-white/80"></i>
+                        Alcalde
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="alcalde.html" onclick="openModal('alcalde-bio')" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-id-badge text-gov-slate text-[11px]"></i> Julio Garcés (Biografía)</a></li>
+                    </ul>
+                </li>
+
+                <!-- Item: Nosotros -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-circle-info text-white/80"></i>
+                        Nosotros
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="mision-vision.html" onclick="openModal('mision')" class="submenu-link"><i class="fa-solid fa-bullseye text-gov-slate text-[11px]"></i> Misión y Visión</a></li>
+                      </ul>
+                </li>
+
+                <li class="nav-item">
+       <button class="nav-btn">
+        <i class="fa-solid fa-sitemap text-white/80"></i>
+        Secretarías 7 Transformaciones
+        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+        </button>
+    
+    <ul class="submenu" style="width: 22rem;">
+        <ul>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Económica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Agroproductivo, Comercial y Económico', 'T1: Económica', 'Potenciación de la siembra y apoyo técnico.')" class="submenu-link text-[11px]">Dirección de Desarrollo Agroproductivo, Comercial y Económico</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Turismo', 'T1: Económica', 'Promoción del turismo local.')" class="submenu-link text-[11px]">Dirección de Turismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Emprendimiento', 'T1: Económica', 'Apoyo a nuevos emprendedores.')" class="submenu-link text-[11px]">Dirección de Emprendimiento</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Economía Productiva', 'T1: Económica', 'Coordinación económica productiva.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Economía Productiva</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Servicios e Infraestructura</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Servicios Públicos', 'T2: Servicios', 'Gestión de servicios básicos.')" class="submenu-link text-[11px]">Dirección de Servicios Públicos</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Infraestructura', 'T2: Servicios', 'Desarrollo de obras y mantenimiento.')" class="submenu-link text-[11px]">Dirección de Infraestructura</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Catastro y Urbanismo', 'T2: Servicios', 'Ordenamiento territorial y catastro.')" class="submenu-link text-[11px]">Dirección de Catastro y Urbanismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Vialidad y Transporte Público', 'T2: Servicios', 'Gestión vial y transporte.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Vialidad y Transporte Público</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Seguridad y Prevención</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Interna', 'T3: Seguridad', 'Seguridad interna municipal.')" class="submenu-link text-[11px]">Dirección de Seguridad Interna</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Ciudadana', 'T3: Seguridad', 'Atención y convivencia.')" class="submenu-link text-[11px]">Dirección de Seguridad Ciudadana</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Prevención del Delito', 'T3: Seguridad', 'Planes de prevención.')" class="submenu-link text-[11px]">Órgano de Prevención del Delito</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Seguridad', 'T3: Seguridad', 'Coordinación de seguridad.')" class="submenu-link text-[11px]">Órgano Municipal de Seguridad</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Dirección de Defensa Integral', 'T3: Seguridad', 'Defensa y despliegue.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano de Dirección de Defensa Integral</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Social</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Social', 'T4: Social', 'Programas de desarrollo social.')" class="submenu-link text-[11px]">Dirección de Desarrollo Social</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Cultura', 'T4: Social', 'Gestión cultural.')" class="submenu-link text-[11px]">Dirección de Cultura</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal del Buen Gobierno', 'T4: Social', 'Eficiencia administrativa.')" class="submenu-link text-[11px]">Órgano Municipal del Buen Gobierno</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Alimentación', 'T4: Social', 'Soberanía alimentaria.')" class="submenu-link text-[11px]">Órgano Municipal de Alimentación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Salud y el Bienestar', 'T4: Social', 'Salud preventiva.')" class="submenu-link text-[11px]">Órgano Municipal de Salud y el Bienestar</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Educación', 'T4: Social', 'Fortalecimiento educativo.')" class="submenu-link text-[11px]">Órgano Municipal de Educación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Misiones y Grandes Misiones', 'T4: Social', 'Gestión de misiones.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Misiones y Grandes Misiones</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Gobierno Popular</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Planificación y Presupuesto', 'T5: Poder Popular', 'Planificación estratégica.')" class="submenu-link text-[11px]">Dirección de Planificación y Presupuesto</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Comunas, Consejos Comunales y Movimientos Sociales', 'T5: Poder Popular', 'Organización popular.')" class="submenu-link text-[11px]">Dirección de Comunas, Consejos Comunales y Movimientos Sociales</a></li>
+                <li><a href="#" onclick="openDireccion('Sala Municipal de Autogobierno Popular y Comunal', 'T5: Poder Popular', 'Gestión autogestionada.')" class="submenu-link text-[11px]" style="border-bottom:none;">Sala Municipal de Autogobierno Popular y Comunal</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría Ecosocialista y Tecnológica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Ecosocialismo', 'T6: Ecología', 'Gestión ambiental.')" class="submenu-link text-[11px]">Dirección de Ecosocialismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Ciencia y Tecnología', 'T6: Ecología', 'Innovación técnica.')" class="submenu-link text-[11px]">Dirección de Ciencia y Tecnología</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Ecosocialismo, Ciencia y Tecnología', 'T6: Ecología', 'Coordinación integral.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Ecosocialismo, Ciencia y Tecnología</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Recursos Humanos y Finanzas</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Gestión Humana', 'T7: Administrativa', 'Gestión de talento.')" class="submenu-link text-[11px]">Dirección de Gestión Humana</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Administración y Finanzas', 'T7: Administrativa', 'Gestión financiera.')" class="submenu-link text-[11px]">Dirección de Administración y Finanzas</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Hacienda', 'T7: Administrativa', 'Control tributario.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Hacienda</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+
+                        <!-- Organigrama -->
+                        <li>
+                            <a href="#" onclick="openModal('organigrama')" class="submenu-link text-gov-dark font-bold" style="border-bottom:none;">
+                                <i class="fa-solid fa-sitemap text-gov-slate text-[11px]"></i> Organigrama Municipal
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gov-dark border-t border-slate-700 px-4 py-3">
+            <ul class="space-y-3 text-xs">
+                <li>
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Municipio Crespo</p>
+                    <div class="grid grid-cols-2 gap-1.5 pl-2 text-slate-200">
+                        <a href="#" onclick="openModal('simbolos-patrios')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Símbolos Patrios</a>
+                        <a href="#" onclick="openModal('simbolos-naturales')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Símbolos Naturales</a>
+                        <a href="#" onclick="openModal('lugares-turisticos')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Turismo</a>
+                        <a href="#" onclick="openModal('territorio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Territorio</a>
+                    </div>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Alcalde</p>
+                    <a href="alcalde.html" onclick="openModal('alcalde-bio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block ml-2">Julio Garcés</a>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Nosotros</p>
+                    <div class="grid grid-cols-3 gap-1.5 pl-2">
+                        <a href="#" onclick="openModal('mision')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Misión</a>
+                        <a href="#" onclick="openModal('vision')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Visión</a>
+                        <a href="#" onclick="openModal('gestion-info')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Gestión</a>
+                    </div>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Plan 7T (Direcciones)</p>
+                    <div class="space-y-1.5 pl-2">
+                        <button onclick="toggleMobile7T()" class="w-full text-left text-[11px] bg-gov-wine/60 p-2 rounded flex justify-between items-center text-white">
+                            <span>Ver Direcciones de las 7T</span>
+                            <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                        </button>
+                        <div id="mobile-7t-list" class="hidden space-y-1 p-2 bg-gov-dark/50 rounded border border-slate-700">
+                            <a href="#" onclick="openModal('organigrama')" class="block text-center bg-white/10 p-2 rounded text-white font-bold mb-2">Ver Organigrama Completo</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+ <main class="max-w-7xl mx-auto px-4 py-8 space-y-12">
+        
+        <div class="border-b-2 border-gov-wine pb-4">
+            <span class="text-[10px] uppercase font-extrabold tracking-widest text-gov-slate">Nuestra Identidad Colectiva</span>
+            <h1 class="text-2xl md:text-3xl font-black text-gov-dark mt-0.5">Misión, Visión y Valores Institucionales</h1>
+            <p class="text-xs text-slate-600 mt-1 max-w-3xl leading-relaxed">
+                Conozca los pilares estratégicos y éticos que rigen la gestión pública de la Alcaldía Bolivariana del Municipio Crespo, orientados al desarrollo integral del territorio y el bienestar social de nuestras comunidades.
+            </p>
+        </div>
+
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white p-6 rounded-2xl border border-gov-border shadow-sm">
+            <div class="lg:col-span-7 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-red-50 text-gov-wine px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-bullseye text-[11px]"></i> Nuestra Misión
+                </div>
+                <h2 class="text-xl md:text-2xl font-black text-gov-dark uppercase tracking-wide">¿Por qué trabajamos?</h2>
+                <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                    Ejercer una gestión pública municipal eficiente, transparente y participativa, fundamentada en los principios constitucionales y el Plan de la Patria. Nos enfocamos en planificar, ejecutar y supervisar políticas públicas que promuevan el desarrollo endógeno agrícola, el fortalecimiento de la infraestructura urbana y rural de Duaca, El Eneal y todas sus comunidades, garantizando de manera óptima el acceso a los servicios esenciales y realzando nuestra rica identidad histórico-cultural.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                    Trabajamos de la mano con el Poder Popular organizado para consolidar al Municipio Crespo como un modelo de eficiencia administrativa y corresponsabilidad civil y social.
+                </p>
+            </div>
+            
+            <div class="lg:col-span-5 w-full">
+                <div class="relative bg-slate-100 border-2 border-solid border-slate-300 rounded-xl overflow-hidden min-h-[260px] flex flex-col items-center justify-center p-4 group hover:border-gov-wine transition-colors">
+                    <img src="est1.jpeg" alt="Misión en Acción - Alcaldía de Crespo" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 z-10">
+                    
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white p-6 rounded-2xl border border-gov-border shadow-sm">
+            <div class="lg:col-span-5 order-last lg:order-first w-full">
+                <div class="relative bg-slate-100 border-2 border-solid border-slate-300 rounded-xl overflow-hidden min-h-[260px] flex flex-col items-center justify-center p-4 group hover:border-gov-accent transition-colors">
+                    <img src="est2.jpeg" alt="Visión de Futuro - Municipio Crespo" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 z-10">
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-sky-50 text-gov-dark px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                    <i class="fa-solid fa-eye text-[11px] text-gov-accent"></i> Nuestra Visión
+                </div>
+                <h2 class="text-xl md:text-2xl font-black text-gov-dark uppercase tracking-wide">¿Hacia dónde nos dirigimos?</h2>
+                <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                    Ser reconocidos para el año 2030 como un municipio potencia de referencia estatal y nacional, consolidando el lema institucional de <span class="font-bold text-gov-wine">"Sacándole el brillo a la Perla"</span>. Aspiramos a estructurar un territorial con infraestructuras consolidadas, altos índices de seguridad ciudadana, autonomía eco-productiva sustentable y una red turística cultural de primer orden basada en nuestros atractivos naturales e históricos.
+                </p>
+                <p class="text-sm text-slate-600 leading-relaxed text-justify">
+                    Nos proyectamos como una institución gubernamental de vanguardia tecnológica, con procesos simplificados y un capital humano comprometido con la ética pública y la resolución inmediata de las demandas del pueblo.
+                </p>
+            </div>
+        </section>
+
+        <section class="space-y-6">
+            <div class="text-center max-w-xl mx-auto space-y-1">
+                <span class="text-[9px] uppercase font-black text-gov-wine tracking-widest block">Ética y Conducta Pública</span>
+                <h2 class="text-xl md:text-2xl font-black text-gov-dark uppercase tracking-wide">Valores que nos Definen</h2>
+                <p class="text-xs text-gov-slate">Normas fundamentales que rigen cada decisión y acción ejecutada en nuestro municipio.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                
+                <div class="bg-white p-5 rounded-xl border border-gov-border shadow-sm flex flex-col items-center text-center space-y-2.5 hover:bg-gray-100 hover:border-black transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-red-50 text-gov-wine flex items-center justify-center text-sm shadow-sm">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <h3 class="text-xs font-black text-gov-dark uppercase tracking-wider">Transparencia</h3>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        Rendición de cuentas claras, acceso público a la información y pulcritud absoluta en el manejo de los recursos públicos municipales.
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-gov-border shadow-sm flex flex-col items-center text-center space-y-2.5 hover:bg-gray-100 hover:border-black transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-blue-50 text-gov-dark flex items-center justify-center text-sm shadow-sm">
+                        <i class="fa-solid fa-users-line"></i>
+                    </div>
+                    <h3 class="text-xs font-black text-gov-dark uppercase tracking-wider">Compromiso Social</h3>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        Sensibilidad humana y prioridad absoluta para resolver las problemáticas de las comunidades en situación de vulnerabilidad.
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-gov-border shadow-sm flex flex-col items-center text-center space-y-2.5 hover:bg-gray-100 hover:border-black transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-green-50 text-gov-green flex items-center justify-center text-sm shadow-sm">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xs font-black text-gov-dark uppercase tracking-wider">Eficiencia</h3>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        Optimización rigurosa de los tiempos de respuesta y de los materiales de gestión para alcanzar metas institucionales de alta calidad.
+                    </p>
+                </div>
+
+                <div class="bg-white p-5 rounded-xl border border-gov-border shadow-sm flex flex-col items-center text-center space-y-2.5 hover:bg-gray-100 hover:border-black transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-amber-50 text-amber-700 flex items-center justify-center text-sm shadow-sm">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+                    <h3 class="text-xs font-black text-gov-dark uppercase tracking-wider">Identidad Local</h3>
+                    <p class="text-[11px] text-slate-600 leading-relaxed">
+                        Respeto, resguardo y orgullo profundo por las tradiciones agrícolas, religiosas, musicales y artesanales de la Perla de Lara.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-2xl border border-gov-border shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 items-stretch">
+            <div class="lg:col-span-6 p-6 md:p-8 space-y-4 flex flex-col justify-center">
+                <span class="text-[9px] uppercase font-bold text-gov-green tracking-widest"><i class="fa-solid fa-square-poll-vertical mr-1"></i> Líneas Estratégicas</span>
+                <h2 class="text-xl font-black text-gov-dark uppercase tracking-wide">Objetivos Generales de la Gestión</h2>
+                
+                <ul class="space-y-3 text-xs text-slate-600">
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-check border border-gov-green text-gov-green rounded-full p-0.5 text-[8px] mt-0.5 shrink-0"></i>
+                        <span>Impulsar el encadenamiento productivo local centrado en la exportación y distribución de rubros bandera como el café y la piña.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-check border border-gov-green text-gov-green rounded-full p-0.5 text-[8px] mt-0.5 shrink-0"></i>
+                        <span>Rehabilitar y embellecer de manera permanente los espacios públicos, vialidades secundarias e infraestructuras recreacionales de la entidad.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fa-solid fa-check border border-gov-green text-gov-green rounded-full p-0.5 text-[8px] mt-0.5 shrink-0"></i>
+                        <span>Modernizar la recaudación fiscal del municipio a través de plataformas automatizadas que retornen los aportes en obras comunitarias.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-6 w-full min-h-[250px] bg-slate-100 border-t lg:border-t-0 lg:border-l border-dashed border-slate-300 relative flex flex-col items-center justify-center p-6 group hover:border-gov-wine transition-colors">
+                <img src="3.jpeg" alt="Líneas Estratégicas y Paisajes de Crespo" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 z-10">
+                
+                <i class="fa-solid fa-images text-slate-400 text-3xl group-hover:text-gov-wine transition-colors mb-2"></i>
+                <span class="text-[10px] font-bold uppercase text-gov-dark tracking-wider text-center">Espacio para Imagen Panorámica o Galería</span>
+                <span class="text-[9px] text-gov-slate text-center mt-1 max-w-[300px]">Sugerencia: Foto angular nítida de los valles productivos tecnificados de Licua o paisajes de Barro Negro durante el amanecer.</span>
+                <span class="absolute bottom-2 right-2 bg-slate-200/80 text-[8px] px-1.5 py-0.5 rounded font-mono text-slate-500">Sugerido: 800x400px (Horizontal)</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gov-dark text-slate-400 text-xs py-6 mt-12 border-t-4 border-gov-wine text-center">
+        <p>© 2026 Alcaldía Bolivariana del Municipio Crespo. "Sacándole el brillo a la Perla".</p>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

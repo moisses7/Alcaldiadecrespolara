@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares Turísticos - Municipio Crespo</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gov: {
+                            wine: '#CE2029',
+                            dark: '#081E43',
+                            light: '#F8FAFC',
+                            slate: '#64748B',
+                            border: '#E2E8F0',
+                            accent: '#73A7DC',
+                            green: '#008B45'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="bg-gov-light font-sans antialiased">
+
+    <header class="bg-[url('cintillo.png')] bg-cover bg-center border-b border-gov-border min-h-[80px] w-full flex items-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            </div>
+    </header>
+
+    <nav class="bg-gov-dark text-white relative z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between md:hidden py-3">
+                <span class="font-bold text-xs tracking-wider uppercase">PORTAL MUNICIPAL</span>
+                <button onclick="toggleMobileMenu()" class="text-white focus:outline-none hover:text-gray-200 transition">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+
+            <ul id="desktop-menu" class="hidden md:flex items-center space-x-1 h-12 text-xs font-semibold">
+                <li class="hover:bg-white/10 h-full flex items-center px-3 transition cursor-pointer">
+                    <a href="index.html"><i class="fa-solid fa-house mr-1.5 opacity-80"></i> Inicio</a>
+                </li>
+                <li class="hover:bg-white/10 h-full flex items-center px-3 transition cursor-pointer">
+                    <a href="alcalde.html"><i class="fa-solid fa-user mr-1.5 opacity-80"></i> Alcalde</a>
+                </li>
+                <li class="hover:bg-white/10 h-full flex items-center px-3 transition cursor-pointer">
+                    <a href="simbolos-patrios.html"><i class="fa-solid fa-landmark mr-1.5 opacity-80"></i> Símbolos Patrios</a>
+                </li>
+                <li class="hover:bg-white/10 h-full flex items-center px-3 transition cursor-pointer">
+                    <a href="simbolos-naturales.html"><i class="fa-solid fa-leaf mr-1.5 opacity-80"></i> Símbolos Naturales</a>
+                </li>
+                <li class="bg-gov-wine h-full flex items-center px-3 transition cursor-pointer">
+                    <span><i class="fa-solid fa-map-location-dot mr-1.5 opacity-80"></i> Lugares Turísticos</span>
+                </li>
+            </ul>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-700 px-4 py-3">
+            <ul class="space-y-2 text-xs">
+                <li><a href="index.html" class="block bg-white/5 p-2 rounded text-slate-200">Inicio</a></li>
+                <li><a href="alcalde.html" class="block bg-white/5 p-2 rounded text-slate-200">Alcalde</a></li>
+                <li><a href="simbolos-patrios.html" class="block bg-white/5 p-2 rounded text-slate-200">Símbolos Patrios</a></li>
+                <li><a href="simbolos-naturales.html" class="block bg-white/5 p-2 rounded text-slate-200">Símbolos Naturales</a></li>
+                <li><a href="#" class="block bg-gov-wine p-2 rounded text-white font-bold">Lugares Turísticos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-8 h-auto clear-both">
+        
+        <div class="border-b-2 border-gov-wine pb-3">
+            <span class="text-[10px] uppercase font-extrabold tracking-widest text-gov-slate">Destino Turístico Lara</span>
+            <h1 class="text-2xl md:text-3xl font-black text-gov-dark mt-0.5">Atractivos y Lugares Turísticos</h1>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">Descubre la riqueza histórica, natural y patrimonial del Municipio Crespo. Un encuentro con el clima ideal, paisajes verdes y tradiciones vivas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto">
+
+            <div class="bg-white p-5 md:p-6 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="border-b border-gov-border pb-2.5 mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-water text-gov-wine text-sm"></i>
+                            <h2 class="text-sm font-bold text-gov-dark uppercase tracking-wide">Parque Recreacional El Guape</h2>
+                        </div>
+                        <span class="bg-gov-green/10 text-gov-green text-[9px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Natural</span>
+                    </div>
+
+                    <div class="w-full h-44 bg-slate-100 rounded-lg overflow-hidden border border-gov-border flex items-center justify-center mb-4">
+                        <img src="el_guape.png" alt="Parque El Guape Duaca" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x300/081e43/ffffff?text=Parque+El+Guape'">
+                    </div>
+
+                    <div class="text-slate-800 text-xs md:text-sm leading-relaxed space-y-2 text-justify">
+                        <p>
+                            Conocido popularmente como los <strong class="text-gov-dark">Baños de Guape</strong>, es el pulmón vegetal y recreativo por excelencia de Duaca. Este hermoso espacio natural resguarda los nacimientos de agua cristalina que abastecen históricamente a la comunidad.
+                        </p>
+                        <p>
+                            Se encuentra rodeado por una densa vegetación de árboles centenarios, senderos peatonales y pozos aptos para el esparcimiento familiar en un microclima fresco y reconfortante.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-2.5 border-t border-gov-border flex justify-between items-center text-[11px] text-gov-slate">
+                    <span><i class="fa-solid fa-location-dot text-gov-wine mr-1"></i> Sector El Guape, Duaca</span>
+                    <span class="italic font-medium">Acceso Libre</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 md:p-6 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="border-b border-gov-border pb-2.5 mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-gopuram text-gov-wine text-sm"></i>
+                            <h2 class="text-sm font-bold text-gov-dark uppercase tracking-wide">Santuario San Juan Bautista</h2>
+                        </div>
+                        <span class="bg-gov-wine/10 text-gov-wine text-[9px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Histórico</span>
+                    </div>
+
+                    <div class="w-full h-44 bg-slate-100 rounded-lg overflow-hidden border border-gov-border flex items-center justify-center mb-4">
+                        <img src="iglesia_duaca.png" alt="Iglesia de Duaca" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x300/081e43/ffffff?text=Iglesia+San+Juan+Bautista'">
+                    </div>
+
+                    <div class="text-slate-800 text-xs md:text-sm leading-relaxed space-y-2 text-justify">
+                        <p>
+                            Es una joya arquitectónica y el faro de identidad espiritual de los crespenses. Este templo católico destaca singularmente en la heráldica nacional debido a sus <strong class="text-gov-dark">cinco majestuosas cúpulas</strong> visibles desde los accesos terrestres a la ciudad.
+                        </p>
+                        <p>
+                            Su fachada y sus altares internos custodian invaluables piezas de arte sacro colonial y republicano, erigiéndose como parada obligatoria para el turismo cultural e histórico del estado Lara.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-2.5 border-t border-gov-border flex justify-between items-center text-[11px] text-gov-slate">
+                    <span><i class="fa-solid fa-location-dot text-gov-wine mr-1"></i> Casco Central frente a Plaza Bolívar</span>
+                    <span class="font-bold text-gov-dark">Patrimonio Cultural</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 md:p-6 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="border-b border-gov-border pb-2.5 mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-mug-hot text-gov-wine text-sm"></i>
+                            <h2 class="text-sm font-bold text-gov-dark uppercase tracking-wide">Ruta de las Haciendas Cafetaleras</h2>
+                        </div>
+                        <span class="bg-amber-600/10 text-amber-700 text-[9px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Agroturismo</span>
+                    </div>
+
+                    <div class="w-full h-44 bg-slate-100 rounded-lg overflow-hidden border border-gov-border flex items-center justify-center mb-4">
+                        <img src="ruta_cafe.png" alt="Haciendas de Café Crespo" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x300/081e43/ffffff?text=Ruta+del+Caf%C3%A9'">
+                    </div>
+
+                    <div class="text-slate-800 text-xs md:text-sm leading-relaxed space-y-2 text-justify">
+                        <p>
+                            Un viaje en el tiempo hacia la estructura productiva decimonónica de Lara. La ruta abarca legendarias estancias coloniales y de la "Época de Oro" del café (como la antigua <strong class="text-gov-dark">Hacienda Stella</strong>), enclavadas en las zonas altas y montañosas del municipio.
+                        </p>
+                        <p>
+                            Los visitantes pueden conocer los antiguos patios de secado de granos, maquinarias históricas y experimentar de cerca el proceso de recolección artesanal junto a los productores locales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-2.5 border-t border-gov-border flex justify-between items-center text-[11px] text-gov-slate">
+                    <span><i class="fa-solid fa-location-dot text-gov-wine mr-1"></i> Zonas Altas / Eje de la Serranía</span>
+                    <span class="italic font-medium">Turismo Guiado</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 md:p-6 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="border-b border-gov-border pb-2.5 mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-mountain-sun text-gov-wine text-sm"></i>
+                            <h2 class="text-sm font-bold text-gov-dark uppercase tracking-wide">Área Ecológica Barro Negro</h2>
+                        </div>
+                        <span class="bg-gov-green/10 text-gov-green text-[9px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Ecoturismo</span>
+                    </div>
+
+                    <div class="w-full h-44 bg-slate-100 rounded-lg overflow-hidden border border-gov-border flex items-center justify-center mb-4">
+                        <img src="barro_negro.png" alt="Bosque Barro Negro" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x300/081e43/ffffff?text=Bosque+Barro+Negro'">
+                    </div>
+
+                    <div class="text-slate-800 text-xs md:text-sm leading-relaxed space-y-2 text-justify">
+                        <p>
+                            Un santuario ambiental protegido que forma parte de las estribaciones de la Serranía de Aroa. Presenta un ecosistema de bosque nublado de imponente biodiversidad, ideal para el <strong class="text-gov-dark">senderismo de montaña</strong>, la investigación científica y el avistamiento de aves autóctonas.
+                        </p>
+                        <p>
+                            Es el lugar perfecto para los entusiastas del turismo de aventura y los amantes de la fotografía de naturaleza gracias a su constante neblina y ricas formaciones geológicas.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-2.5 border-t border-gov-border flex justify-between items-center text-[11px] text-gov-slate">
+                    <span><i class="fa-solid fa-location-dot text-gov-wine mr-1"></i> Entorno rural de Duaca</span>
+                    <span class="font-bold text-gov-green">Zona Protegida</span>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

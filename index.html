@@ -14,7 +14,7 @@
     <!-- LIBRERÍAS EXTERNAS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
@@ -81,10 +81,10 @@
                         <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
                     </button>
                     <ul class="submenu">
-                        <li><a href="#" onclick="openModal('simbolos-patrios')" class="submenu-link"><i class="fa-solid fa-flag text-gov-slate text-[11px]"></i> Símbolos Patrios</a></li>
-                        <li><a href="#" onclick="openModal('simbolos-naturales')" class="submenu-link"><i class="fa-solid fa-leaf text-gov-slate text-[11px]"></i> Símbolos Naturales</a></li>
-                        <li><a href="#" onclick="openModal('lugares-turisticos')" class="submenu-link"><i class="fa-solid fa-map-pin text-gov-slate text-[11px]"></i> Lugares Turísticos</a></li>
-                        <li><a href="#" onclick="openModal('territorio')" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-compass text-gov-slate text-[11px]"></i> Territorio</a></li>
+                        <li><a href="simbolos-patrios.html"  class="submenu-link"><i class="fa-solid fa-flag text-gov-slate text-[11px]"></i> Símbolos Patrios</a></li>
+                        <li><a href="simbolos-naturales.html" class="submenu-link"><i class="fa-solid fa-leaf text-gov-slate text-[11px]"></i> Símbolos Naturales</a></li>
+                        <li><a href="lugares-turisticos.html"  class="submenu-link"><i class="fa-solid fa-map-pin text-gov-slate text-[11px]"></i> Lugares Turísticos</a></li>
+                        <li><a href="territorio.html" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-compass text-gov-slate text-[11px]"></i> Territorio</a></li>
                     </ul>
                 </li>
 
@@ -96,7 +96,7 @@
                         <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
                     </button>
                     <ul class="submenu">
-                        <li><a href="#" onclick="openModal('alcalde-bio')" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-id-badge text-gov-slate text-[11px]"></i> Julio Garcés (Biografía)</a></li>
+                        <li><a href="alcalde.html" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-id-badge text-gov-slate text-[11px]"></i> Julio Garcés (Biografía)</a></li>
                     </ul>
                 </li>
 
@@ -108,10 +108,9 @@
                         <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
                     </button>
                     <ul class="submenu">
-                        <li><a href="#" onclick="openModal('mision')" class="submenu-link"><i class="fa-solid fa-bullseye text-gov-slate text-[11px]"></i> Misión</a></li>
-                        <li><a href="#" onclick="openModal('vision')" class="submenu-link"><i class="fa-solid fa-eye text-gov-slate text-[11px]"></i> Visión</a></li>
-                        <li><a href="#" onclick="openModal('gestion-info')" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-clipboard-list text-gov-slate text-[11px]"></i> Gestión</a></li>
-                    </ul>
+                   <ul class="submenu">
+                        <li><a href="mision-vision.html"  class="submenu-link"><i class="fa-solid fa-bullseye text-gov-slate text-[11px]"></i> Misión y Visión</a></li>
+                      </ul>  </ul>
                 </li>
 
                 <li class="nav-item">
@@ -242,7 +241,7 @@
                 </li>
                 <li class="border-t border-slate-700 pt-2 text-slate-200">
                     <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Alcalde</p>
-                    <a href="#" onclick="openModal('alcalde-bio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block ml-2">Julio Garcés</a>
+                    <a href="alcalde.html" onclick="openModal('alcalde-bio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block ml-2">Julio Garcés</a>
                 </li>
                 <li class="border-t border-slate-700 pt-2 text-slate-200">
                     <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Nosotros</p>
@@ -283,7 +282,7 @@
                     <div class="carrusel-contenedor">
                         <!-- Slide 1 -->
                         <div id="slide-0" class="carousel-item opacity-100 z-10">
-                            <div class="carousel-overlay" style="background-image: url('1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                             <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
                                 <span class="carousel-badge bg-gov-accent text-gov-dark">Salud y Atención Social</span>
                                 <p class="text-xl md:text-2xl font-bold tracking-tight">¡Comprometidos con la salud de nuestra gente!</p>
@@ -293,7 +292,7 @@
 
                         <!-- Slide 2 -->
                         <div id="slide-1" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background-image: url('2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                             <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
                                 <span class="carousel-badge bg-gov-green text-white">Producción Pecuaria</span>
                                 <p class="text-xl md:text-2xl font-bold tracking-tight">Avanzamos en la consolidación de espacios productivos.</p>
@@ -303,7 +302,7 @@
 
                         <!-- Slide 3 -->
                         <div id="slide-2" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background-image: url('3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                             <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
                                 <span class="carousel-badge bg-gov-wine text-white">Recreación y Esparcimiento</span>
                                 <p class="text-xl md:text-2xl font-bold tracking-tight">100% rehabilitada y operativa la piscina de nuestro Parque Duaca.</p>
@@ -313,7 +312,7 @@
 
                         <!-- Slide 4 -->
                         <div id="slide-3" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background-image: url('4.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/4.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                             <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
                                 <span class="carousel-badge bg-gov-wine text-white">Deporte y Cultura</span>
                                 <p class="text-xl md:text-2xl font-bold tracking-tight">Hemos reinaugurado la cancha de nuestro gimnasio Jacinto Lara.</p>
@@ -363,15 +362,15 @@
                     </button>
 
                     <!-- Recaudación -->
-                    <button onclick="openModal('tramite-recaudacion')" class="btn-tramite">
-                        <div class="btn-tramite-icono">
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-                        <div>
-                            <span class="btn-tramite-titulo">Recaudación / Impuestos</span>
-                            <span class="btn-tramite-desc">Portal del Contribuyente - SEDEMATRI</span>
-                        </div>
-                    </button>
+                    <a href="https://crespolara.sysprim.com/" target="_blank" class="btn-tramite">
+    <div class="btn-tramite-icono">
+        <i class="fa-solid fa-wallet"></i>
+    </div>
+    <div>
+        <span class="btn-tramite-titulo">Recaudación / Impuestos</span>
+        <span class="btn-tramite-desc">Portal del Contribuyente - Hacienda</span>
+    </div>
+</a>
 
                     <!-- Trimestres -->
                     <button onclick="openModal('tramite-trimestres')" class="btn-tramite">
@@ -472,10 +471,10 @@
                         <div class="pt-2 mt-2 border-t border-slate-800">
                             <p class="text-[9px] font-bold text-gov-slate uppercase tracking-wider mb-1.5">Enlaces Alcaldía y Alcalde:</p>
                             <div class="social-icons">
-                                <a href="#" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="social-btn" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
-                                <a href="#" class="social-btn" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                                <a href="https://www.facebook.com/crespopuragentebuena" class="social-btn" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/crespopuragentebuena/?hl=es" class="social-btn" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="https://t.me/crespopuragentebuena" class="social-btn" title="Telegram"><i class="fa-brands fa-telegram"></i></a>
+                                <a href="https://x.com/JulioGarcesA" class="social-btn" title="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
                             </div>
                         </div>
                     </div>
@@ -954,7 +953,7 @@ document.addEventListener('DOMContentLoaded', fetchInstagramPosts);
             },
             'tramite-recaudacion': {
                 tag: 'Impuestos Municipales',
-                title: 'Recaudación de Tributos / SEDEMATRI',
+                title: 'Recaudación de Tributos / Hacienda Municipal',
                 body: `
                     <p class="text-slate-600 text-[11px]">
                         La recaudación fiscal del Municipio Crespo se gestiona a través del Servicio Descentralizado de Administración Tributaria (SEDEMATRI) para su inversión directa en mejoras públicas:

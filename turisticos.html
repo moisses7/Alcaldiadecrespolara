@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lugares Turísticos - Municipio Crespo</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        gov: {
+                            wine: '#CE2029',
+                            dark: '#081E43',
+                            light: '#F8FAFC',
+                            slate: '#64748B',
+                            border: '#E2E8F0',
+                            accent: '#73A7DC',
+                            green: '#008B45'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body class="bg-gov-light font-sans antialiased">
+
+    <header class="bg-[url('cintillo.png')] bg-cover bg-center border-b border-gov-border min-h-[80px] w-full flex items-center">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            </div>
+    </header>
+
+ <nav class="nav-principal">
+        <div class="container">
+            <!-- Menú Móvil Cabecera -->
+            <div class="flex justify-between md:hidden py-3 px-4">
+                <span class="font-bold text-xs tracking-wider uppercase">PORTAL MUNICIPAL</span>
+                <button onclick="toggleMobileMenu()" class="text-white focus:outline-none hover:text-gray-200 transition">
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Menú Desktop Horizontal -->
+            <ul id="desktop-menu" class="nav-menu-desktop">
+                
+                <!-- Item: Municipio Crespo -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-landmark text-white/80"></i>
+                        Municipio Crespo
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="simbolos-patrios.html" onclick="openModal('simbolos-patrios')" class="submenu-link"><i class="fa-solid fa-flag text-gov-slate text-[11px]"></i> Símbolos Patrios</a></li>
+                        <li><a href="simbolos-naturales.html" onclick="openModal('simbolos-naturales')" class="submenu-link"><i class="fa-solid fa-leaf text-gov-slate text-[11px]"></i> Símbolos Naturales</a></li>
+                        <li><a href="lugares-turisticos.html" onclick="openModal('lugares-turisticos')" class="submenu-link bg-black/20"><i class="fa-solid fa-map-pin text-gov-slate text-[11px]"></i> Lugares Turísticos</a></li>
+                        <li><a href="territorio.html" onclick="openModal('territorio')" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-compass text-gov-slate text-[11px]"></i> Territorio</a></li>
+                    </ul>
+                </li>
+
+                <!-- Item: Alcalde -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-user text-white/80"></i>
+                        Alcalde
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                        <li><a href="alcalde.html" onclick="openModal('alcalde-bio')" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-id-badge text-gov-slate text-[11px]"></i> Julio Garcés (Biografía)</a></li>
+                    </ul>
+                </li>
+
+                <!-- Item: Nosotros -->
+                <li class="nav-item">
+                    <button class="nav-btn">
+                        <i class="fa-solid fa-circle-info text-white/80"></i>
+                        Nosotros
+                        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+                    </button>
+                    <ul class="submenu">
+                    <ul class="submenu">
+                        <li><a href="mision-vision.html" onclick="openModal('mision')" class="submenu-link"><i class="fa-solid fa-bullseye text-gov-slate text-[11px]"></i> Misión y Visión</a></li>
+                      </ul> </ul>
+                </li>
+
+                <li class="nav-item">
+       <button class="nav-btn">
+        <i class="fa-solid fa-sitemap text-white/80"></i>
+        Secretarías 7 Transformaciones
+        <i class="fa-solid fa-chevron-down text-[9px] opacity-80"></i>
+        </button>
+    
+    <ul class="submenu" style="width: 22rem;">
+        <ul>
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Económica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Agroproductivo, Comercial y Económico', 'T1: Económica', 'Potenciación de la siembra y apoyo técnico.')" class="submenu-link text-[11px]">Dirección de Desarrollo Agroproductivo, Comercial y Económico</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Turismo', 'T1: Económica', 'Promoción del turismo local.')" class="submenu-link text-[11px]">Dirección de Turismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Emprendimiento', 'T1: Económica', 'Apoyo a nuevos emprendedores.')" class="submenu-link text-[11px]">Dirección de Emprendimiento</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Economía Productiva', 'T1: Económica', 'Coordinación económica productiva.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Economía Productiva</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Servicios e Infraestructura</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Servicios Públicos', 'T2: Servicios', 'Gestión de servicios básicos.')" class="submenu-link text-[11px]">Dirección de Servicios Públicos</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Infraestructura', 'T2: Servicios', 'Desarrollo de obras y mantenimiento.')" class="submenu-link text-[11px]">Dirección de Infraestructura</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Catastro y Urbanismo', 'T2: Servicios', 'Ordenamiento territorial y catastro.')" class="submenu-link text-[11px]">Dirección de Catastro y Urbanismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Vialidad y Transporte Público', 'T2: Servicios', 'Gestión vial y transporte.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Vialidad y Transporte Público</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Seguridad y Prevención</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Interna', 'T3: Seguridad', 'Seguridad interna municipal.')" class="submenu-link text-[11px]">Dirección de Seguridad Interna</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Seguridad Ciudadana', 'T3: Seguridad', 'Atención y convivencia.')" class="submenu-link text-[11px]">Dirección de Seguridad Ciudadana</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Prevención del Delito', 'T3: Seguridad', 'Planes de prevención.')" class="submenu-link text-[11px]">Órgano de Prevención del Delito</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Seguridad', 'T3: Seguridad', 'Coordinación de seguridad.')" class="submenu-link text-[11px]">Órgano Municipal de Seguridad</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano de Dirección de Defensa Integral', 'T3: Seguridad', 'Defensa y despliegue.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano de Dirección de Defensa Integral</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Transformación Social</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Desarrollo Social', 'T4: Social', 'Programas de desarrollo social.')" class="submenu-link text-[11px]">Dirección de Desarrollo Social</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Cultura', 'T4: Social', 'Gestión cultural.')" class="submenu-link text-[11px]">Dirección de Cultura</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal del Buen Gobierno', 'T4: Social', 'Eficiencia administrativa.')" class="submenu-link text-[11px]">Órgano Municipal del Buen Gobierno</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Alimentación', 'T4: Social', 'Soberanía alimentaria.')" class="submenu-link text-[11px]">Órgano Municipal de Alimentación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Salud y el Bienestar', 'T4: Social', 'Salud preventiva.')" class="submenu-link text-[11px]">Órgano Municipal de Salud y el Bienestar</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Educación', 'T4: Social', 'Fortalecimiento educativo.')" class="submenu-link text-[11px]">Órgano Municipal de Educación</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Misiones y Grandes Misiones', 'T4: Social', 'Gestión de misiones.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Misiones y Grandes Misiones</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Gobierno Popular</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Planificación y Presupuesto', 'T5: Poder Popular', 'Planificación estratégica.')" class="submenu-link text-[11px]">Dirección de Planificación y Presupuesto</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Comunas, Consejos Comunales y Movimientos Sociales', 'T5: Poder Popular', 'Organización popular.')" class="submenu-link text-[11px]">Dirección de Comunas, Consejos Comunales y Movimientos Sociales</a></li>
+                <li><a href="#" onclick="openDireccion('Sala Municipal de Autogobierno Popular y Comunal', 'T5: Poder Popular', 'Gestión autogestionada.')" class="submenu-link text-[11px]" style="border-bottom:none;">Sala Municipal de Autogobierno Popular y Comunal</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría Ecosocialista y Tecnológica</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Ecosocialismo', 'T6: Ecología', 'Gestión ambiental.')" class="submenu-link text-[11px]">Dirección de Ecosocialismo</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Ciencia y Tecnología', 'T6: Ecología', 'Innovación técnica.')" class="submenu-link text-[11px]">Dirección de Ciencia y Tecnología</a></li>
+                <li><a href="#" onclick="openDireccion('Órgano Municipal de Ecosocialismo, Ciencia y Tecnología', 'T6: Ecología', 'Coordinación integral.')" class="submenu-link text-[11px]" style="border-bottom:none;">Órgano Municipal de Ecosocialismo, Ciencia y Tecnología</a></li>
+            </ul>
+        </li>
+
+        <li class="nested-submenu-container border-b border-gov-border">
+            <div class="submenu-link cursor-pointer justify-between bg-white hover:bg-gov-light">
+                <span class="font-medium">Secretaría de Recursos Humanos y Finanzas</span>
+                <i class="fa-solid fa-chevron-right text-[8px] text-gov-slate"></i>
+            </div>
+            <ul class="nested-submenu">
+                <li><a href="#" onclick="openDireccion('Dirección de Gestión Humana', 'T7: Administrativa', 'Gestión de talento.')" class="submenu-link text-[11px]">Dirección de Gestión Humana</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Administración y Finanzas', 'T7: Administrativa', 'Gestión financiera.')" class="submenu-link text-[11px]">Dirección de Administración y Finanzas</a></li>
+                <li><a href="#" onclick="openDireccion('Dirección de Hacienda', 'T7: Administrativa', 'Control tributario.')" class="submenu-link text-[11px]" style="border-bottom:none;">Dirección de Hacienda</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+
+                        <!-- Organigrama -->
+                        <li>
+                            <a href="#" onclick="openModal('organigrama')" class="submenu-link text-gov-dark font-bold" style="border-bottom:none;">
+                                <i class="fa-solid fa-sitemap text-gov-slate text-[11px]"></i> Organigrama Municipal
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gov-dark border-t border-slate-700 px-4 py-3">
+            <ul class="space-y-3 text-xs">
+                <li>
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Municipio Crespo</p>
+                    <div class="grid grid-cols-2 gap-1.5 pl-2 text-slate-200">
+                        <a href="#" onclick="openModal('simbolos-patrios')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Símbolos Patrios</a>
+                        <a href="#" onclick="openModal('simbolos-naturales')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Símbolos Naturales</a>
+                        <a href="#" onclick="openModal('lugares-turisticos')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Turismo</a>
+                        <a href="#" onclick="openModal('territorio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block">Territorio</a>
+                    </div>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Alcalde</p>
+                    <a href="alcalde.html" onclick="openModal('alcalde-bio')" class="bg-white/5 p-2 rounded hover:bg-white/10 block ml-2">Julio Garcés</a>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Nosotros</p>
+                    <div class="grid grid-cols-3 gap-1.5 pl-2">
+                        <a href="#" onclick="openModal('mision')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Misión</a>
+                        <a href="#" onclick="openModal('vision')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Visión</a>
+                        <a href="#" onclick="openModal('gestion-info')" class="bg-white/5 p-2 rounded hover:bg-white/10 text-center">Gestión</a>
+                    </div>
+                </li>
+                <li class="border-t border-slate-700 pt-2 text-slate-200">
+                    <p class="text-[10px] font-bold uppercase text-gov-slate tracking-wider mb-1">Plan 7T (Direcciones)</p>
+                    <div class="space-y-1.5 pl-2">
+                        <button onclick="toggleMobile7T()" class="w-full text-left text-[11px] bg-gov-wine/60 p-2 rounded flex justify-between items-center text-white">
+                            <span>Ver Direcciones de las 7T</span>
+                            <i class="fa-solid fa-chevron-down text-[8px]"></i>
+                        </button>
+                        <div id="mobile-7t-list" class="hidden space-y-1 p-2 bg-gov-dark/50 rounded border border-slate-700">
+                            <a href="#" onclick="openModal('organigrama')" class="block text-center bg-white/10 p-2 rounded text-white font-bold mb-2">Ver Organigrama Completo</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8 space-y-8 h-auto clear-both">
+        
+        <div class="border-b-2 border-gov-wine pb-3">
+            <span class="text-[10px] uppercase font-extrabold tracking-widest text-gov-slate">Destino Turístico Lara</span>
+            <h1 class="text-2xl md:text-3xl font-black text-gov-dark mt-0.5">Atractivos y Lugares Turísticos</h1>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">Explora el potencial turístico de Crespo a través de nuestras galerías fotográficas integradas.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 h-auto">
+
+            <div class="bg-white p-5 md:p-6 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="border-b border-gov-border pb-2.5 mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-water text-gov-wine text-sm"></i>
+                            <h2 class="text-sm font-bold text-gov-dark uppercase tracking-wide">Parque Recreacional El Guape</h2>
+                        </div>
+                        <span class="bg-gov-green/10 text-gov-green text-[9px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Natural</span>
+                    </div>
+
+                    <div class="relative w-full h-72 md:h-80 bg-slate-100 rounded-lg overflow-hidden border border-gov-border flex items-center justify-center mb-4 group" data-carousel>
+                        <div class="absolute inset-0 opacity-100 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="guape1.jpeg" alt="Parque El Guape - Foto 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=El+Guape+---+Vista+Manantial'">
+                        </div>
+                        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="guape2.jpeg" alt="Parque El Guape - Foto 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=El+Guape+---+Senderos+Verdes'">
+                        </div>
+                        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="guape3.jpeg" alt="Parque El Guape - Foto 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=El+Guape+---+Areas+Recreativas'">
+                        </div>
+
+                        <button onclick="moveSlide(this, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gov-wine text-white w-7 h-7 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 shadow-sm">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        <button onclick="moveSlide(this, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gov-wine text-white w-7 h-7 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 shadow-sm">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-1.5 z-10" data-indicators>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white transition-all duration-200" data-dot></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/50 transition-all duration-200" data-dot></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/50 transition-all duration-200" data-dot></span>
+                        </div>
+                    </div>
+
+                    <div class="text-slate-800 text-xs md:text-sm leading-relaxed space-y-2 text-justify">
+                        <p>Conocido popularmente como los <strong class="text-gov-dark">Baños de Guape</strong>, es el pulmón vegetal y recreativo por excelencia de Duaca. Este hermoso espacio natural resguarda los nacimientos de agua cristalina que abastecen históricamente a la comunidad.</p>
+                    </div>
+                </div>
+                <div class="mt-4 pt-2.5 border-t border-gov-border flex justify-between items-center text-[11px] text-gov-slate">
+                    <span><i class="fa-solid fa-location-dot text-gov-wine mr-1"></i> Sector El Guape, Duaca</span>
+                    <span class="italic font-medium">Acceso Libre</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 md:p-6 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="border-b border-gov-border pb-2.5 mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-gopuram text-gov-wine text-sm"></i>
+                            <h2 class="text-sm font-bold text-gov-dark uppercase tracking-wide">Santuario San Juan Bautista</h2>
+                        </div>
+                        <span class="bg-gov-wine/10 text-gov-wine text-[9px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Histórico</span>
+                    </div>
+
+                    <div class="relative w-full h-72 md:h-80 bg-slate-100 rounded-lg overflow-hidden border border-gov-border flex items-center justify-center mb-4 group" data-carousel>
+                        <div class="absolute inset-0 opacity-100 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="iglesia1.jpeg" alt="Iglesia - Foto 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Iglesia+---+Fachada+Principal'">
+                        </div>
+                        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="iglesia2.jpeg" alt="Iglesia - Foto 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Iglesia+---+Las+5+Cupulas'">
+                        </div>
+                        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="iglesia3.jpeg" alt="Iglesia - Foto 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Iglesia+---+Altar+Colonial'">
+                        </div>
+
+                        <button onclick="moveSlide(this, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gov-wine text-white w-7 h-7 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 shadow-sm">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        <button onclick="moveSlide(this, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gov-wine text-white w-7 h-7 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 shadow-sm">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-1.5 z-10" data-indicators>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white transition-all duration-200" data-dot></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/50 transition-all duration-200" data-dot></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/50 transition-all duration-200" data-dot></span>
+                        </div>
+                    </div>
+
+                    <div class="text-slate-800 text-xs md:text-sm leading-relaxed space-y-2 text-justify">
+                        <p>Es una joya arquitectónica y el faro de identidad espiritual de los crespenses. Este templo católico destaca singularmente en la heráldica nacional debido a sus <strong class="text-gov-dark">cinco majestuosas cúpulas</strong> visibles desde los accesos terrestres a la ciudad.</p>
+                    </div>
+                </div>
+                <div class="mt-4 pt-2.5 border-t border-gov-border flex justify-between items-center text-[11px] text-gov-slate">
+                    <span><i class="fa-solid fa-location-dot text-gov-wine mr-1"></i> Casco Central frente a Plaza Bolívar</span>
+                    <span class="font-bold text-gov-dark">Patrimonio Cultural</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 md:p-6 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="border-b border-gov-border pb-2.5 mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-mug-hot text-gov-wine text-sm"></i>
+                            <h2 class="text-sm font-bold text-gov-dark uppercase tracking-wide">Ruta de las Haciendas Cafetaleras</h2>
+                        </div>
+                        <span class="bg-amber-600/10 text-amber-700 text-[9px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Agroturismo</span>
+                    </div>
+
+                    <div class="relative w-full h-72 md:h-80 bg-slate-100 rounded-lg overflow-hidden border border-gov-border flex items-center justify-center mb-4 group" data-carousel>
+                        <div class="absolute inset-0 opacity-100 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="ruta1.jpeg" alt="Ruta Café - Foto 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Ruta+Caf%C3%A9+---+Cosecha+Artesanal'">
+                        </div>
+                        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="ruta2.jpeg" alt="Ruta Café - Foto 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Ruta+Caf%C3%A9+---+Hacienda+Stella'">
+                        </div>
+                        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="ruta3.jpg" alt="Ruta Café - Foto 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Ruta+Caf%C3%A9+---+Patios+de+Secado'">
+                        </div>
+
+                        <button onclick="moveSlide(this, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gov-wine text-white w-7 h-7 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 shadow-sm">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        <button onclick="moveSlide(this, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gov-wine text-white w-7 h-7 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 shadow-sm">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-1.5 z-10" data-indicators>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white transition-all duration-200" data-dot></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/50 transition-all duration-200" data-dot></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/50 transition-all duration-200" data-dot></span>
+                        </div>
+                    </div>
+
+                    <div class="text-slate-800 text-xs md:text-sm leading-relaxed space-y-2 text-justify">
+                        <p>Un viaje en el tiempo hacia la estructura productiva decimonónica de Lara. La ruta abarca legendarias estancias coloniales y de la "Época de Oro" del café (como la antigua <strong class="text-gov-dark">Hacienda Stella</strong>), enclavadas en las zones altas y montañosas del municipio.</p>
+                    </div>
+                </div>
+                <div class="mt-4 pt-2.5 border-t border-gov-border flex justify-between items-center text-[11px] text-gov-slate">
+                    <span><i class="fa-solid fa-location-dot text-gov-wine mr-1"></i> Zonas Altas / Eje de la Serranía</span>
+                    <span class="italic font-medium">Turismo Guiado</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-5 md:p-6 rounded-xl border border-gov-border shadow-sm flex flex-col justify-between">
+                <div>
+                    <div class="border-b border-gov-border pb-2.5 mb-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-mountain-sun text-gov-wine text-sm"></i>
+                            <h2 class="text-sm font-bold text-gov-dark uppercase tracking-wide">Área Ecológica Barro Negro</h2>
+                        </div>
+                        <span class="bg-gov-green/10 text-gov-green text-[9px] font-extrabold px-2 py-0.5 rounded uppercase tracking-wider">Ecoturismo</span>
+                    </div>
+
+                    <div class="relative w-full h-72 md:h-80 bg-slate-100 rounded-lg overflow-hidden border border-gov-border flex items-center justify-center mb-4 group" data-carousel>
+                        <div class="absolute inset-0 opacity-100 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="barro1.jpg" alt="Barro Negro - Foto 1" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Barro+Negro+---+Bosque+Nublado'">
+                        </div>
+                        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="barro2.jpeg" alt="Barro Negro - Foto 2" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Barro+Negro+---+Senderismo'">
+                        </div>
+                        <div class="absolute inset-0 opacity-0 transition-opacity duration-300 ease-in-out" data-slide>
+                            <img src="barro3.jpeg" alt="Barro Negro - Foto 3" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/500x400/081e43/ffffff?text=Barro+Negro+---+Flora+Exotica'">
+                        </div>
+
+                        <button onclick="moveSlide(this, -1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gov-wine text-white w-7 h-7 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 shadow-sm">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        <button onclick="moveSlide(this, 1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-gov-wine text-white w-7 h-7 rounded-full flex items-center justify-center transition opacity-0 group-hover:opacity-100 focus:opacity-100 z-10 shadow-sm">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+
+                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-1.5 z-10" data-indicators>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white transition-all duration-200" data-dot></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/50 transition-all duration-200" data-dot></span>
+                            <span class="w-1.5 h-1.5 rounded-full bg-white/50 transition-all duration-200" data-dot></span>
+                        </div>
+                    </div>
+
+                    <div class="text-slate-800 text-xs md:text-sm leading-relaxed space-y-2 text-justify">
+                        <p>Un santuario ambiental protegido que forma parte de las estribaciones de la Serranía de Aroa. Presenta un ecosistema de bosque nublado de imponente biodiversidad, ideal para el senderismo de montaña y avistamiento de aves.</p>
+                    </div>
+                </div>
+                <div class="mt-4 pt-2.5 border-t border-gov-border flex justify-between items-center text-[11px] text-gov-slate">
+                    <span><i class="fa-solid fa-location-dot text-gov-wine mr-1"></i> Entorno rural de Duaca</span>
+                    <span class="font-bold text-gov-green">Zona Protegida</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Lógica para alternar menú móvil
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Lógica universal para los Carruseles de la página
+        function moveSlide(button, direction) {
+            // Ubicar el contenedor del carrusel específico donde se hizo clic
+            const carousel = button.closest('[data-carousel]');
+            const slides = carousel.querySelectorAll('[data-slide]');
+            const dots = carousel.querySelectorAll('[data-dot]');
+            
+            let currentIndex = -1;
+
+            // Encontrar el slide visible actualmente
+            slides.forEach((slide, index) => {
+                if (slide.classList.contains('opacity-100')) {
+                    currentIndex = index;
+                }
+            });
+
+            // Ocultar slide y apagar indicador actual
+            slides[currentIndex].classList.replace('opacity-100', 'opacity-0');
+            dots[currentIndex].classList.replace('bg-white', 'bg-white/50');
+
+            // Calcular posición del nuevo slide (Bucle infinito)
+            let newIndex = currentIndex + direction;
+            if (newIndex >= slides.length) newIndex = 0;
+            if (newIndex < 0) newIndex = slides.length - 1;
+
+            // Mostrar el nuevo slide y encender su indicador
+            slides[newIndex].classList.replace('opacity-0', 'opacity-100');
+            dots[newIndex].classList.replace('bg-white/50', 'bg-white');
+        }
+    </script>
+</body>
+</html>
