@@ -83,7 +83,7 @@
                     <ul class="submenu">
                         <li><a href="simbolos-patrios.html"  class="submenu-link"><i class="fa-solid fa-flag text-gov-slate text-[11px]"></i> Símbolos Patrios</a></li>
                         <li><a href="simbolos-naturales.html" class="submenu-link"><i class="fa-solid fa-leaf text-gov-slate text-[11px]"></i> Símbolos Naturales</a></li>
-                        <li><a href="turisticos.html"  class="submenu-link"><i class="fa-solid fa-map-pin text-gov-slate text-[11px]"></i> Lugares Turísticos</a></li>
+                        <li><a href="lugares-turisticos.html"  class="submenu-link"><i class="fa-solid fa-map-pin text-gov-slate text-[11px]"></i> Lugares Turísticos</a></li>
                         <li><a href="territorio.html" class="submenu-link" style="border-bottom:none;"><i class="fa-solid fa-compass text-gov-slate text-[11px]"></i> Territorio</a></li>
                     </ul>
                 </li>
@@ -218,7 +218,7 @@
 
                         <!-- Organigrama -->
                         <li>
-                            <a href="#" onclick="openModal('organigrama')" class="submenu-link text-gov-dark font-bold" style="border-bottom:none;">
+                            <a href="organigrama.pdf" onclick="openModal('organigrama')" class="submenu-link text-gov-dark font-bold" style="border-bottom:none;">
                                 <i class="fa-solid fa-sitemap text-gov-slate text-[11px]"></i> Organigrama Municipal
                             </a>
                         </li>
@@ -257,7 +257,7 @@
                             <i class="fa-solid fa-chevron-down text-[8px]"></i>
                         </button>
                         <div id="mobile-7t-list" class="hidden space-y-1 p-2 bg-gov-dark/50 rounded border border-slate-700">
-                            <a href="#" onclick="openModal('organigrama')" class="block text-center bg-white/10 p-2 rounded text-white font-bold mb-2">Ver Organigrama Completo</a>
+                            <a href="organigrama.pdf" onclick="openModal('organigrama')" class="block text-center bg-white/10 p-2 rounded text-white font-bold mb-2">Ver Organigrama Completo</a>
                         </div>
                     </div>
                 </li>
@@ -280,7 +280,7 @@
                     <div class="carrusel-contenedor">
                         <!-- Slide 1 -->
                         <div id="slide-0" class="carousel-item opacity-100 z-10">
-                            <div class="carousel-overlay" style="background-image: url('1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                             <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
                                 <span class="carousel-badge bg-gov-accent text-gov-dark">Salud y Atención Social</span>
                                 <p class="text-xl md:text-2xl font-bold tracking-tight">¡Comprometidos con la salud de nuestra gente!</p>
@@ -290,7 +290,7 @@
 
                         <!-- Slide 2 -->
                         <div id="slide-1" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background-image: url('2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/2.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                             <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
                                 <span class="carousel-badge bg-gov-green text-white">Producción Pecuaria</span>
                                 <p class="text-xl md:text-2xl font-bold tracking-tight">Avanzamos en la consolidación de espacios productivos.</p>
@@ -300,7 +300,7 @@
 
                         <!-- Slide 3 -->
                         <div id="slide-2" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background-image: url('3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/3.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                             <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
                                 <span class="carousel-badge bg-gov-wine text-white">Recreación y Esparcimiento</span>
                                 <p class="text-xl md:text-2xl font-bold tracking-tight">100% rehabilitada y operativa la piscina de nuestro Parque Duaca.</p>
@@ -310,7 +310,7 @@
 
                         <!-- Slide 4 -->
                         <div id="slide-3" class="carousel-item opacity-0">
-                            <div class="carousel-overlay" style="background-image: url('4.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
+                            <div class="carousel-overlay" style="background-image: url('Fotos/4.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;"></div>
                             <div class="space-y-2 max-w-2xl relative z-20 bg-black/50 px-4 py-2 rounded-lg">
                                 <span class="carousel-badge bg-gov-wine text-white">Deporte y Cultura</span>
                                 <p class="text-xl md:text-2xl font-bold tracking-tight">Hemos reinaugurado la cancha de nuestro gimnasio Jacinto Lara.</p>
@@ -414,18 +414,7 @@
                 
                 <!-- Izquierda: Instagram Feed Simulador -->
                 <div class="flex flex-col">
-                <h5 class="footer-titulo">
-        <i class="fa-brands fa-instagram text-white/80"></i>
-        @crespopuragentebuena
-    </h5>
-    <div class="footer-widget">
-        <div id="ig-carousel-container" class="relative overflow-hidden h-36 bg-slate-950 flex items-center justify-center rounded">
-            <div class="text-white/50 text-xs animate-pulse">Cargando publicaciones...</div>
-        </div>
-        
-        <div id="ig-dots-container" class="flex justify-center gap-1 mt-2">
-            </div>
-    </div>
+     <rssapp-carousel id="rjn6VD4eJhWZJ71i"></rssapp-carousel><script src="https://widget.rss.app/v1/carousel.js" type="text/javascript" async></script>
 </div>
 
                 <!-- Centro: Dirección Física y Mapa Geográfico Leaflet -->
